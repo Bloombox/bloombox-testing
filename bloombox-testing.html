@@ -1,0 +1,271 @@
+
+<!--
+`<bloombox-testing>` provides UI for displaying and editing product QA testing results.
+
+@group Bloombox Elements
+@element bloombox-testing
+@demo demo/index.html
+@homepage bloombox.github.io
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-label/iron-label.html">
+<link rel="import" href="../paper-slider/paper-slider.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../bloombox-styles/bloombox-styles.html">
+
+
+<dom-module id="bloombox-testing">
+  <template>
+    <style is="custom-style" include="bloombox-styles">
+      :host {
+        display: inline-block;
+        position: relative;
+        min-height: 35px;
+      }
+
+      :host iron-label {
+        padding: 5px;
+        border-radius: 3px;
+      }
+
+      :host paper-slider {
+        --paper-slider-active-color: var(--bloombox-green-primary);
+        --paper-slider-knob-color: var(--bloombox-green-primary);
+        --paper-slider-pin-color: var(--bloombox-green-primary);
+        --paper-slider-secondary-color: #333;
+      }
+
+      :host .no-test-data:after {
+        content: 'Results Pending';
+        font-size: 80%;
+        text-transform: uppercase;
+        font-style: italic;
+        background: red;
+        position: absolute;
+        top: -5px;
+        bottom: -5px;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        background: white;
+        opacity: 0.85;
+      }
+
+      :host .bloombox-test-results-display iron-label {
+        background: green;
+        color: white;
+      }
+
+      :host .bloombox-test-results-display .terpene-label.pinene-label {
+        background: #bada55;
+      }
+
+      :host .bloombox-test-results-display .terpene-label.myrcene-label {
+        background: red;
+      }
+
+      :host .bloombox-test-results-display .terpene-label.limonene-label {
+        background: orange;
+      }
+
+      :host .bloombox-test-results-display .terpene-label.linalool-label {
+        background: purple;
+      }
+
+      :host .bloombox-test-results-display .terpene-label.caryophyllene-label {
+        background: pink;
+      }
+
+      :host .test-result-rating {
+        padding: 10px;
+      }
+
+      :host .test-result-rating:not(:first-child) {
+        margin-top: -20px;
+      }
+
+      :host .test-result-rating paper-slider {
+        margin-top: -10px;
+        --paper-input-container: {
+          width: 50px;
+        }
+      }
+
+      :host .test-result-rating iron-label span {
+        margin-left: 15px;
+      }
+
+      :host .test-result-rating paper-slider /deep/ paper-input {
+        width: 100px;
+      }
+    </style>
+
+    <div id="widgetWrap" class="bloombox-testing-content">
+      <!-- Zero State UI -->
+      <template is="dom-if" if="[[zerostate]]">
+        <div class="test-result-ratings">
+          <div class="test-result-rating">
+            <iron-label>
+              <span>THC Rating</span>
+              <paper-slider
+                id="thcValue"
+                pin
+                editable
+                value="{{thc}}"
+                class="thc-value test-result-rating-value form-item"
+                secondary-progress="20.0"
+                step="0.1"
+                max="40.0"></paper-slider>
+            </iron-label>
+          </div>
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBD Rating</span>
+              <paper-slider
+                id="cbdValue"
+                pin
+                editable
+                value="{{cbd}}"
+                class="cbd-value test-result-rating-value form-item"
+                secondary-progress="10.0"
+                step="0.1"
+                max="30.0"></paper-slider>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+        </div><!-- end div.test-result-ratings -->
+
+        <!-- Terpenes -->
+        <div class="test-result-terpenes">
+          <paper-checkbox
+            id="terpenePinene"
+            checked="{{pinene}}"
+            class="form-item terpene-result terpene-pinene"
+            noink
+            name="terpenePinene">Pinene</paper-checkbox>
+          <paper-checkbox
+            id="terpeneMyrcene"
+            checked="{{myrcene}}"
+            class="form-item terpene-result terpene-myrcene"
+            noink
+            name="terpeneMyrcene">Myrcene</paper-checkbox>
+          <paper-checkbox
+            id="terpeneLimonene"
+            checked="{{limonene}}"
+            class="form-item terpene-result terpene-limonene"
+            noink
+            name="terpeneLimonene">Limonene</paper-checkbox>
+          <paper-checkbox
+            id="terpeneCaryophyllene"
+            checked="{{caryophyllene}}"
+            class="form-item terpene-result terpene-caryophyllene"
+            noink
+            name="terpeneCaryophyllene">Carophyllene</paper-checkbox>
+          <paper-checkbox
+            id="terpeneLinalool"
+            checked="{{linalool}}"
+            class="form-item terpene-result terpene-linalool"
+            noink
+            name="terpeneLinalool">Linalool</paper-checkbox>
+        </div><!-- end .test-result-terpenes -->
+      </template>
+
+      <!-- Data UI -->
+      <template is="dom-if" if="[[!zerostate]]">
+        <div class="bloombox-test-results-display">
+          <iron-label class="rating-label thc-label"><span>THC: [[thc]]%</span></iron-label>
+          <iron-label class="rating-label cbd-label"><span>CBD: [[cbd]]%</span></iron-label>
+          <iron-label class="terpene-label pinene-label" hidden$="[[!pinene]]"><span>PNE</span></iron-label>
+          <iron-label class="terpene-label myrcene-label" hidden$="[[!myrcene]]"><span>MYR</span></iron-label>
+          <iron-label class="terpene-label limonene-label" hidden$="[[!limonene]]"><span>LMN</span></iron-label>
+          <iron-label class="terpene-label caryophyllene-label" hidden$="[[!caryophyllene]]"><span>CRY</span></iron-label>
+          <iron-label class="terpene-label linalool-label" hidden$="[[!linalool]]"><span>LIN</span></iron-label>
+        </div><!-- end .bloombox-test-results-display -->
+      </template>
+    </template>
+  </div><!-- end #widgetWrap.bloombox-testing-content -->
+
+  <script>
+    Polymer({
+      is: 'bloombox-testing',
+
+      properties: {
+        _overlayActive: {
+          type: Boolean,
+          computed: '_handleOverlay(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene)'
+        },
+
+        zerostate: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+
+        mode: {
+          type: String,
+          notify: true,
+          value: "basic"
+        },
+
+        cbd: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        thc: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        limonene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+
+        pinene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+
+        myrcene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+
+        linalool: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+
+        caryophyllene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        }
+      },
+
+      _handleOverlay: function(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene) {
+        if (!zerostate && cbd === 0 && thc === 0 && limonene === false && pinene === false && myrcene == false && linalool == false && caryophyllene == false)
+          return this._toggleOverlay(true);
+        return this._toggleOverlay(false);
+      },
+
+      _toggleOverlay: function(enabled) {
+        var wrapElement = this.$.widgetWrap;
+        if (enabled) {
+          if (!wrapElement.classList.contains("no-test-data"))
+            wrapElement.classList.add("no-test-data");
+        } else {
+          wrapElement.classList.remove("no-test-data");
+        }
+        return enabled;
+      }
+    });
+  </script>
+</dom-module>
