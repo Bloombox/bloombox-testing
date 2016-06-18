@@ -12,6 +12,13 @@
     <link rel="import" href="../bloombox-testing.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
+      div.centered.graybg demo-snippet /deep/ .demo {
+        background-color: #DDD !important;
+      }
+
+      div.centered.graybg demo-snippet bloombox-testing {
+        --no-tests-overlay-background: #DDD;
+      }
     </style>
   </head>
   <body>
@@ -26,6 +33,15 @@
 
     <div class="vertical-section-container centered">
       <h3>Basic Display Demo: No Tests</h3>
+      <demo-snippet>
+        <template>
+          <bloombox-testing mode="basic"></bloombox-testing>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered graybg">
+      <h3>Basic Display Demo: No Tests with Style Override</h3>
       <demo-snippet>
         <template>
           <bloombox-testing mode="basic"></bloombox-testing>
