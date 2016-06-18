@@ -41,40 +41,39 @@
         font-size: 80%;
         text-transform: uppercase;
         font-style: italic;
-        background: red;
         position: absolute;
         top: -5px;
         bottom: -5px;
         width: 100%;
         text-align: center;
         padding: 5px;
-        background: white;
+        background: var(--no-tests-overlay-background, white);
         opacity: 0.85;
       }
 
       :host .bloombox-test-results-display iron-label {
-        background: green;
-        color: white;
+        background: var(--base-label-background, #009688);
+        color: var(--base-label-color, white);
       }
 
       :host .bloombox-test-results-display .terpene-label.pinene-label {
-        background: #bada55;
+        background: var(--testing-pinene-color, #4caf50);
       }
 
       :host .bloombox-test-results-display .terpene-label.myrcene-label {
-        background: red;
+        background: var(--testing-myrcene-color, #03a9f4);
       }
 
       :host .bloombox-test-results-display .terpene-label.limonene-label {
-        background: orange;
+        background: var(--testing-limonene-color, #ffc107);
       }
 
       :host .bloombox-test-results-display .terpene-label.linalool-label {
-        background: purple;
+        background: var(--testing-linalool-color, #673ab7);
       }
 
       :host .bloombox-test-results-display .terpene-label.caryophyllene-label {
-        background: pink;
+        background: var(--testing-caryophyllene-color, #ff9800);
       }
 
       :host .test-result-rating {
@@ -98,6 +97,45 @@
 
       :host .test-result-rating paper-slider /deep/ paper-input {
         width: 100px;
+      }
+
+      :host .test-result-terpenes.zerostate paper-checkbox {
+        display: block;
+        margin: 5px 0;
+      }
+
+      :host .test-result-terpenes.zerostate {
+        padding: 10px 25px;
+      }
+
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-pinene {
+        --paper-checkbox-checked-color: var(--testing-pinene-color, #4caf50);
+        --paper-checkbox-checked-ink-color: var(--testing-pinene-color, #4caf50);
+        --paper-checkbox-unchecked-ink-color: var(--testing-pinene-color, #4caf50);
+      }
+
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-myrcene {
+        --paper-checkbox-checked-color: var(--testing-myrcene-color, #03a9f4);
+        --paper-checkbox-checked-ink-color: var(--testing-myrcene-color, #03a9f4);
+        --paper-checkbox-unchecked-ink-color: var(--testing-myrcene-color, #03a9f4);
+      }
+
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-limonene {
+        --paper-checkbox-checked-color: var(--testing-limonene-color, #ffc107);
+        --paper-checkbox-checked-ink-color: var(--testing-limonene-color, #ffc107);
+        --paper-checkbox-unchecked-ink-color: var(--testing-limonene-color, #ffc107);
+      }
+
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-linalool {
+        --paper-checkbox-checked-color: var(--testing-linalool-color, #673ab7);
+        --paper-checkbox-checked-ink-color: var(--testing-linalool-color, #673ab7);
+        --paper-checkbox-unchecked-ink-color: var(--testing-linalool-color, #673ab7);
+      }
+
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-caryophyllene {
+        --paper-checkbox-checked-color: var(--testing-caryophyllene-color, #ff9800);
+        --paper-checkbox-checked-ink-color: var(--testing-caryophyllene-color, #ff9800);
+        --paper-checkbox-unchecked-ink-color: var(--testing-caryophyllene-color, #ff9800);
       }
     </style>
 
@@ -136,7 +174,7 @@
         </div><!-- end div.test-result-ratings -->
 
         <!-- Terpenes -->
-        <div class="test-result-terpenes">
+        <div class="test-result-terpenes zerostate">
           <paper-checkbox
             id="terpenePinene"
             checked="{{pinene}}"
