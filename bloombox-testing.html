@@ -212,8 +212,8 @@
       <!-- Data UI -->
       <template is="dom-if" if="[[!zerostate]]">
         <div class="bloombox-test-results-display">
-          <iron-label class="rating-label thc-label"><span>THC: [[thc]]%</span></iron-label>
-          <iron-label class="rating-label cbd-label"><span>CBD: [[cbd]]%</span></iron-label>
+          <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc)]]</span></iron-label>
+          <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd)]]</span></iron-label>
           <iron-label class="terpene-label pinene-label" hidden$="[[!pinene]]"><span>PNE</span></iron-label>
           <iron-label class="terpene-label myrcene-label" hidden$="[[!myrcene]]"><span>MYR</span></iron-label>
           <iron-label class="terpene-label limonene-label" hidden$="[[!limonene]]"><span>LMN</span></iron-label>
@@ -304,6 +304,14 @@
           wrapElement.classList.remove("no-test-data");
         }
         return enabled;
+      },
+
+      _renderLabel: function(value) {
+        if (value === 0)
+          return "None";
+        if (value > 50 || Number(value) === value && value % 1 === 0)
+          return [value, "mg"].join("");
+        return [value, "%"].join("");
       }
     });
   </script>
