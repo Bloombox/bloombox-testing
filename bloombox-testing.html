@@ -174,39 +174,41 @@
           </div><!-- end div.test-result-rating -->
         </div><!-- end div.test-result-ratings -->
 
-        <!-- Terpenes -->
-        <div class="test-result-terpenes zerostate">
-          <paper-checkbox
-            id="terpenePinene"
-            checked="{{pinene}}"
-            class="form-item terpene-result terpene-pinene"
-            noink
-            name="terpenePinene">Pinene</paper-checkbox>
-          <paper-checkbox
-            id="terpeneMyrcene"
-            checked="{{myrcene}}"
-            class="form-item terpene-result terpene-myrcene"
-            noink
-            name="terpeneMyrcene">Myrcene</paper-checkbox>
-          <paper-checkbox
-            id="terpeneLimonene"
-            checked="{{limonene}}"
-            class="form-item terpene-result terpene-limonene"
-            noink
-            name="terpeneLimonene">Limonene</paper-checkbox>
-          <paper-checkbox
-            id="terpeneCaryophyllene"
-            checked="{{caryophyllene}}"
-            class="form-item terpene-result terpene-caryophyllene"
-            noink
-            name="terpeneCaryophyllene">Carophyllene</paper-checkbox>
-          <paper-checkbox
-            id="terpeneLinalool"
-            checked="{{linalool}}"
-            class="form-item terpene-result terpene-linalool"
-            noink
-            name="terpeneLinalool">Linalool</paper-checkbox>
-        </div><!-- end .test-result-terpenes -->
+        <template is="dom-if" if="[[_rich]]">
+          <!-- Terpenes -->
+          <div class="test-result-terpenes zerostate">
+            <paper-checkbox
+              id="terpenePinene"
+              checked="{{pinene}}"
+              class="form-item terpene-result terpene-pinene"
+              noink
+              name="terpenePinene">Pinene</paper-checkbox>
+            <paper-checkbox
+              id="terpeneMyrcene"
+              checked="{{myrcene}}"
+              class="form-item terpene-result terpene-myrcene"
+              noink
+              name="terpeneMyrcene">Myrcene</paper-checkbox>
+            <paper-checkbox
+              id="terpeneLimonene"
+              checked="{{limonene}}"
+              class="form-item terpene-result terpene-limonene"
+              noink
+              name="terpeneLimonene">Limonene</paper-checkbox>
+            <paper-checkbox
+              id="terpeneCaryophyllene"
+              checked="{{caryophyllene}}"
+              class="form-item terpene-result terpene-caryophyllene"
+              noink
+              name="terpeneCaryophyllene">Carophyllene</paper-checkbox>
+            <paper-checkbox
+              id="terpeneLinalool"
+              checked="{{linalool}}"
+              class="form-item terpene-result terpene-linalool"
+              noink
+              name="terpeneLinalool">Linalool</paper-checkbox>
+          </div><!-- end .test-result-terpenes -->
+        </template>
       </template>
 
       <!-- Data UI -->
@@ -229,6 +231,11 @@
       is: 'bloombox-testing',
 
       properties: {
+        _rich: {
+          type: Boolean,
+          computed: '_computeRichMode(mode)'
+        }
+
         _overlayActive: {
           type: Boolean,
           computed: '_handleOverlay(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene)'
@@ -287,6 +294,10 @@
           notify: true,
           value: false
         }
+      },
+
+      _computeRichMode: function(mode) {
+        return mode == "rich";
       },
 
       _handleOverlay: function(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene) {
