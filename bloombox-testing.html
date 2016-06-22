@@ -231,64 +231,101 @@
       is: 'bloombox-testing',
 
       properties: {
+        /**
+         * Computed flag property indicating whether we are showing/editing `rich`
+         * test results.
+         */
         _rich: {
           type: Boolean,
           computed: '_computeRichMode(mode)'
-        }
-
-        _overlayActive: {
-          type: Boolean,
-          computed: '_handleOverlay(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene)'
         },
 
+        /**
+         * Computed flag that controls whether we should place an overlay over the
+         * element with a "Results Pending" message.
+         */
+        _overlayActive: {
+          type: Boolean,
+          computed: '_computeOverlay(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene)'
+        },
+
+        /**
+         * Flag indicating that we should be showing a form to edit test results.
+         */
         zerostate: {
           type: Boolean,
           notify: true,
           value: false
         },
 
+        /**
+         * Testing mode setting. There are two options: `basic` and `rich`:
+         * - `basic`: THC and CBD testing values only.
+         * - `rich`: Includes `basic`, plus a spread of `terpene` flags
+         */
         mode: {
           type: String,
           notify: true,
           value: "basic"
         },
 
+        /**
+         * CBD value detected/indicated by the tests.
+         */
         cbd: {
           type: Number,
           notify: true,
           value: 0
         },
 
+        /**
+         * THC value detected/indicated by the tests.
+         */
         thc: {
           type: Number,
           notify: true,
           value: 0
         },
 
+        /**
+         * Flag indicating the presence of the terpene `limonene`.
+         */
         limonene: {
           type: Boolean,
           notify: true,
           value: false
         },
 
+        /**
+         * Flag indicating the presence of the terpene `pinene`.
+         */
         pinene: {
           type: Boolean,
           notify: true,
           value: false
         },
 
+        /**
+         * Flag indicating the presence of the terpene `myrcene`.
+         */
         myrcene: {
           type: Boolean,
           notify: true,
           value: false
         },
 
+        /**
+         * Flag indicating the presence of the terpene `linalool`.
+         */
         linalool: {
           type: Boolean,
           notify: true,
           value: false
         },
 
+        /**
+         * Flag indicating the presence of the terpene `caryophyllene`.
+         */
         caryophyllene: {
           type: Boolean,
           notify: true,
@@ -296,16 +333,28 @@
         }
       },
 
+      /**
+       * Computed property function that returns whether we are running
+       * in `rich` testing mode or not.
+       */
       _computeRichMode: function(mode) {
         return mode == "rich";
       },
 
-      _handleOverlay: function(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene) {
+      /**
+       * Computed property function that controls whether we should be
+       * showing a "Results Pending" overlay.
+       */
+      _computeOverlay: function(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene) {
         if (!zerostate && cbd === 0 && thc === 0 && limonene === false && pinene === false && myrcene == false && linalool == false && caryophyllene == false)
           return this._toggleOverlay(true);
         return this._toggleOverlay(false);
       },
 
+      /**
+       * Helper function to perform the dirty work of showing and hiding
+       * the results-pending overlay.
+       */
       _toggleOverlay: function(enabled) {
         var wrapElement = this.$.widgetWrap;
         if (enabled) {
@@ -317,6 +366,15 @@
         return enabled;
       },
 
+      /**
+       * Render function that decides whether to show results in percentage
+       * or milligram form. Basically, we use a simple process to determine this:
+       * - Is the number over 50? Then it is very likely a `mg` value.
+       * - Is the number an integer? Then it is very likely a `mg` value.
+       * - Otherwise, show the value in `%` form.
+
+       * The above is likely imperfect! @TODO ;)
+       */
       _renderLabel: function(value) {
         if (value === 0)
           return "None";
