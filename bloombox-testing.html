@@ -227,7 +227,7 @@
   </div><!-- end #widgetWrap.bloombox-testing-content -->
 
   <script>
-    Polymer({
+    Polymer.BloomboxTesting = Polymer({
       is: 'bloombox-testing',
 
       properties: {
@@ -369,7 +369,7 @@
       /**
        * Render function that decides whether to show results in percentage
        * or milligram form. Basically, we use a simple process to determine this:
-       * - Is the number over 50? Then it is very likely a `mg` value.
+       * - Is the number over 100? Then it is certainly a `mg` value.
        * - Is the number an integer? Then it is very likely a `mg` value.
        * - Otherwise, show the value in `%` form.
 
@@ -378,7 +378,7 @@
       _renderLabel: function(value) {
         if (value === 0)
           return "None";
-        if (value > 50 || Number(value) === value && value % 1 === 0)
+        if (value > 100 || Number(value) === value && value % 1 === 0)
           return [value, "mg"].join("");
         return [value, "%"].join("");
       }
