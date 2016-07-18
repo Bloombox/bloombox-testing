@@ -22,6 +22,7 @@
         display: inline-block;
         position: relative;
         min-height: 35px;
+        min-width: 300px;
         cursor: default;
       }
 
@@ -58,25 +59,265 @@
         color: var(--base-label-color, white);
       }
 
-      :host .bloombox-test-results-display .terpene-label.pinene-label {
-        background: var(--testing-pinene-color, #4caf50);
+      :host .terpene-toggle-option {
+        display: flex;
+        align-items: center;
       }
 
+      /*  myrcene styling  */
       :host .bloombox-test-results-display .terpene-label.myrcene-label {
-        background: var(--testing-myrcene-color, #03a9f4);
+        background: var(--testing-myrcene-color, #393b79);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-myrcene {
+        --paper-checkbox-checked-color: var(--testing-myrcene-color, #393b79);
+        --paper-checkbox-checked-ink-color: var(--testing-myrcene-color, #393b79);
+        --paper-checkbox-unchecked-ink-color: var(--testing-myrcene-color, #393b79);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-myrcene {
+        --paper-slider-knob-color: var(--testing-myrcene-color, #393b79);
+        --paper-slider-pin-color: var(--testing-myrcene-color, #393b79);
+        --paper-slider-active-color: var(--testing-myrcene-color, #393b79);
       }
 
-      :host .bloombox-test-results-display .terpene-label.limonene-label {
-        background: var(--testing-limonene-color, #ffc107);
+      /*  caryophyllene-oxide styling  */
+      :host .bloombox-test-results-display .terpene-label.caryophyllene-oxide-label {
+        background: var(--testing-caryophyllene-oxide-color, #5254a3);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-caryophyllene-oxide {
+        --paper-checkbox-checked-color: var(--testing-caryophyllene-oxide-color, #5254a3);
+        --paper-checkbox-checked-ink-color: var(--testing-caryophyllene-oxide-color, #5254a3);
+        --paper-checkbox-unchecked-ink-color: var(--testing-caryophyllene-oxide-color, #5254a3);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-caryophyllene-oxide {
+        --paper-slider-active-color: var(--testing-caryophyllene-oxide-color, #5254a3);
+        --paper-slider-knob-color: var(--testing-caryophyllene-oxide-color, #5254a3);
+        --paper-slider-pin-color: var(--testing-caryophyllene-oxide-color, #5254a3);
       }
 
+      /*  linalool styling  */
       :host .bloombox-test-results-display .terpene-label.linalool-label {
-        background: var(--testing-linalool-color, #673ab7);
+        background: var(--testing-linalool-color, #6b6ecf);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-linalool {
+        --paper-checkbox-checked-color: var(--testing-linalool-color, #6b6ecf);
+        --paper-checkbox-checked-ink-color: var(--testing-linalool-color, #6b6ecf);
+        --paper-checkbox-unchecked-ink-color: var(--testing-linalool-color, #6b6ecf);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-linalool {
+        --paper-slider-active-color: var(--testing-linalool-color, #6b6ecf);
+        --paper-slider-knob-color: var(--testing-linalool-color, #6b6ecf);
+        --paper-slider-pin-color: var(--testing-linalool-color, #6b6ecf);
       }
 
-      :host .bloombox-test-results-display .terpene-label.caryophyllene-label {
-        background: var(--testing-caryophyllene-color, #ff9800);
+      /*  beta-caryophyllene styling  */
+      :host .bloombox-test-results-display .terpene-label.beta-caryophyllene-label {
+        background: var(--testing-beta-caryophyllene-color, #9c9ede);
       }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-beta-caryophyllene {
+        --paper-checkbox-checked-color: var(--testing-beta-caryophyllene-color, #9c9ede);
+        --paper-checkbox-checked-ink-color: var(--testing-beta-caryophyllene-color, #9c9ede);
+        --paper-checkbox-unchecked-ink-color: var(--testing-beta-caryophyllene-color, #9c9ede);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-beta-caryophyllene {
+        --paper-slider-active-color: var(--testing-beta-caryophyllene-color, #9c9ede);
+        --paper-slider-knob-color: var(--testing-beta-caryophyllene-color, #9c9ede);
+        --paper-slider-pin-color: var(--testing-beta-caryophyllene-color, #9c9ede);
+      }
+
+      /*  alpha-humulene styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-humulene-label {
+        background: var(--testing-alpha-humulene-color, #637939);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-humulene {
+        --paper-checkbox-checked-color: var(--testing-alpha-humulene-color, #637939);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-humulene-color, #637939);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-humulene-color, #637939);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-humulene {
+        --paper-slider-active-color: var(--testing-alpha-humulene-color, #637939);
+        --paper-slider-knob-color: var(--testing-alpha-humulene-color, #637939);
+        --paper-slider-pin-color: var(--testing-alpha-humulene-color, #637939);
+      }
+
+      /*  alpha-terpineol styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-terpineol-label {
+        background: var(--testing-alpha-terpineol-color, #8ca252);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-terpineol {
+        --paper-checkbox-checked-color: var(--testing-alpha-terpineol-color, #8ca252);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-terpineol-color, #8ca252);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-terpineol-color, #8ca252);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-terpineol {
+        --paper-slider-active-color: var(--testing-alpha-terpineol-color, #8ca252);
+        --paper-slider-knob-color: var(--testing-alpha-terpineol-color, #8ca252);
+        --paper-slider-pin-color: var(--testing-alpha-terpineol-color, #8ca252);
+      }
+
+      /*  camphene styling  */
+      :host .bloombox-test-results-display .terpene-label.camphene-label {
+        background: var(--testing-camphene-color, #b5cf6b);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-camphene {
+        --paper-checkbox-checked-color: var(--testing-camphene-color, #b5cf6b);
+        --paper-checkbox-checked-ink-color: var(--testing-camphene-color, #b5cf6b);
+        --paper-checkbox-unchecked-ink-color: var(--testing-camphene-color, #b5cf6b);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-camphene {
+        --paper-slider-active-color: var(--testing-camphene-color, #b5cf6b);
+        --paper-slider-knob-color: var(--testing-camphene-color, #b5cf6b);
+        --paper-slider-pin-color: var(--testing-camphene-color, #b5cf6b);
+      }
+      
+      /*  fenchol styling  */
+      :host .bloombox-test-results-display .terpene-label.fenchol-label {
+        background: var(--testing-fenchol-color, #cedb9c);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-fenchol {
+        --paper-checkbox-checked-color: var(--testing-fenchol-color, #cedb9c);
+        --paper-checkbox-checked-ink-color: var(--testing-fenchol-color, #cedb9c);
+        --paper-checkbox-unchecked-ink-color: var(--testing-fenchol-color, #cedb9c);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-fenchol {
+        --paper-slider-active-color: var(--testing-fenchol-color, #cedb9c);
+        --paper-slider-knob-color: var(--testing-fenchol-color, #cedb9c);
+        --paper-slider-pin-color: var(--testing-fenchol-color, #cedb9c);
+      }
+
+      /*  beta-pinene styling  */
+      :host .bloombox-test-results-display .terpene-label.beta-pinene-label {
+        background: var(--testing-beta-pinene-color, #bd9e39);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-beta-pinene {
+        --paper-checkbox-checked-color: var(--testing-beta-pinene-color, #bd9e39);
+        --paper-checkbox-checked-ink-color: var(--testing-beta-pinene-color, #bd9e39);
+        --paper-checkbox-unchecked-ink-color: var(--testing-beta-pinene-color, #bd9e39);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-beta-pinene {
+        --paper-slider-active-color: var(--testing-beta-pinene-color, #bd9e39);
+        --paper-slider-knob-color: var(--testing-beta-pinene-color, #bd9e39);
+        --paper-slider-pin-color: var(--testing-beta-pinene-color, #bd9e39);
+      }  
+
+      /*  alpha-terpinine styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-terpinine-label {
+        background: var(--testing-alpha-terpinine-color, #e7ba52);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-terpinine {
+        --paper-checkbox-checked-color: var(--testing-alpha-terpinine-color, #e7ba52);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-terpinine-color, #e7ba52);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-terpinine-color, #e7ba52);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-terpinine {
+        --paper-slider-active-color: var(--testing-alpha-terpinine-color, #e7ba52);
+        --paper-slider-knob-color: var(--testing-alpha-terpinine-color, #e7ba52);
+        --paper-slider-pin-color: var(--testing-alpha-terpinine-color, #e7ba52);
+      }
+
+      /*  alpha-pinene styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-pinene-label {
+        background: var(--testing-alpha-pinene-color, #8c6d31);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-pinene {
+        --paper-checkbox-checked-color: var(--testing-alpha-pinene-color, #8c6d31);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-pinene-color, #8c6d31);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-pinene-color, #8c6d31);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-pinene {
+        --paper-slider-active-color: var(--testing-alpha-pinene-color, #8c6d31);
+        --paper-slider-knob-color: var(--testing-alpha-pinene-color, #8c6d31);
+        --paper-slider-pin-color: var(--testing-alpha-pinene-color, #8c6d31);
+      }  
+
+      /*  gamma-terpinine styling  */
+      :host .bloombox-test-results-display .terpene-label.gamma-terpinine-label {
+        background: var(--testing-gamma-terpinine-color, #e7cb94);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-gamma-terpinine {
+        --paper-checkbox-checked-color: var(--testing-gamma-terpinine-color, #e7cb94);
+        --paper-checkbox-checked-ink-color: var(--testing-gamma-terpinine-color, #e7cb94);
+        --paper-checkbox-unchecked-ink-color: var(--testing-gamma-terpinine-color, #e7cb94);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-gamma-terpinine {
+        --paper-slider-active-color: var(--testing-gamma-terpinine-color, #e7cb94);
+        --paper-slider-knob-color: var(--testing-gamma-terpinine-color, #e7cb94);
+        --paper-slider-pin-color: var(--testing-gamma-terpinine-color, #e7cb94);
+      }  
+
+      /*  limonene styling  */
+      :host .bloombox-test-results-display .terpene-label.limonene-label {
+        background: var(--testing-limonene-color, #ad494a);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-limonene {
+        --paper-checkbox-checked-color: var(--testing-limonene-color, #ad494a);
+        --paper-checkbox-checked-ink-color: var(--testing-limonene-color, #ad494a);
+        --paper-checkbox-unchecked-ink-color: var(--testing-limonene-color, #ad494a);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-limonene {
+        --paper-slider-active-color: var(--testing-limonene-color, #ad494a);
+        --paper-slider-knob-color: var(--testing-limonene-color, #ad494a);
+        --paper-slider-pin-color: var(--testing-limonene-color, #ad494a);
+      }  
+
+      /*  carene styling  */
+      :host .bloombox-test-results-display .terpene-label.carene-label {
+        background: var(--testing-carene-color, #d6616b);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-carene {
+        --paper-checkbox-checked-color: var(--testing-carene-color, #d6616b);
+        --paper-checkbox-checked-ink-color: var(--testing-carene-color, #d6616b);
+        --paper-checkbox-unchecked-ink-color: var(--testing-carene-color, #d6616b);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-carene {
+        --paper-slider-active-color: var(--testing-carene-color, #d6616b);
+        --paper-slider-knob-color: var(--testing-carene-color, #d6616b);
+        --paper-slider-pin-color: var(--testing-carene-color, #d6616b);
+      }  
+
+      /*  beta-ocimene styling  */
+      :host .bloombox-test-results-display .terpene-label.beta-ocimene-label {
+        background: var(--testing-beta-ocimene-color, #e7969c);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-beta-ocimene {
+        --paper-checkbox-checked-color: var(--testing-beta-ocimene-color, #e7969c);
+        --paper-checkbox-checked-ink-color: var(--testing-beta-ocimene-color, #e7969c);
+        --paper-checkbox-unchecked-ink-color: var(--testing-beta-ocimene-color, #e7969c);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-beta-ocimene {
+        --paper-slider-active-color: var(--testing-beta-ocimene-color, #e7969c);
+        --paper-slider-knob-color: var(--testing-beta-ocimene-color, #e7969c);
+        --paper-slider-pin-color: var(--testing-beta-ocimene-color, #e7969c);
+      }  
+
+      /*  alpha-phellandrene styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-phellandrene-label {
+        background: var(--testing-alpha-phellandrene-color, #a55194);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-phellandrene {
+        --paper-checkbox-checked-color: var(--testing-alpha-phellandrene-color, #a55194);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-phellandrene-color, #a55194);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-phellandrene-color, #a55194);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-phellandrene {
+        --paper-slider-active-color: var(--testing-alpha-phellandrene-color, #a55194);
+        --paper-slider-knob-color: var(--testing-alpha-phellandrene-color, #a55194);
+        --paper-slider-pin-color: var(--testing-alpha-phellandrene-color, #a55194);
+      }  
+
+      /*  terpinolene styling  */
+      :host .bloombox-test-results-display .terpene-label.terpinolene-label {
+        background: var(--testing-terpinolene-color, #ce6dbd);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-terpinolene {
+        --paper-checkbox-checked-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-checkbox-checked-ink-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-checkbox-unchecked-ink-color: var(--testing-terpinolene-color, #ce6dbd);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-terpinolene {
+        --paper-slider-active-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-slider-knob-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-slider-pin-color: var(--testing-terpinolene-color, #ce6dbd);
+      }  
 
       :host .test-result-rating {
         padding: 10px;
@@ -97,47 +338,26 @@
         margin-left: 15px;
       }
 
+      :host .test-result-rating paper-slider {
+        width: 200px;
+      }
+
       :host .test-result-rating paper-slider /deep/ paper-input {
-        width: 100px;
+        width: 200px;
+      }
+
+      :host .terpene-toggle-option paper-slider /deep/ paper-input {
+        min-width: 80px;
       }
 
       :host .test-result-terpenes.zerostate paper-checkbox {
         display: block;
         margin: 5px 0;
+        min-width: 130px;
       }
 
       :host .test-result-terpenes.zerostate {
         padding: 10px 25px;
-      }
-
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-pinene {
-        --paper-checkbox-checked-color: var(--testing-pinene-color, #4caf50);
-        --paper-checkbox-checked-ink-color: var(--testing-pinene-color, #4caf50);
-        --paper-checkbox-unchecked-ink-color: var(--testing-pinene-color, #4caf50);
-      }
-
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-myrcene {
-        --paper-checkbox-checked-color: var(--testing-myrcene-color, #03a9f4);
-        --paper-checkbox-checked-ink-color: var(--testing-myrcene-color, #03a9f4);
-        --paper-checkbox-unchecked-ink-color: var(--testing-myrcene-color, #03a9f4);
-      }
-
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-limonene {
-        --paper-checkbox-checked-color: var(--testing-limonene-color, #ffc107);
-        --paper-checkbox-checked-ink-color: var(--testing-limonene-color, #ffc107);
-        --paper-checkbox-unchecked-ink-color: var(--testing-limonene-color, #ffc107);
-      }
-
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-linalool {
-        --paper-checkbox-checked-color: var(--testing-linalool-color, #673ab7);
-        --paper-checkbox-checked-ink-color: var(--testing-linalool-color, #673ab7);
-        --paper-checkbox-unchecked-ink-color: var(--testing-linalool-color, #673ab7);
-      }
-
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-caryophyllene {
-        --paper-checkbox-checked-color: var(--testing-caryophyllene-color, #ff9800);
-        --paper-checkbox-checked-ink-color: var(--testing-caryophyllene-color, #ff9800);
-        --paper-checkbox-unchecked-ink-color: var(--testing-caryophyllene-color, #ff9800);
       }
     </style>
 
@@ -177,37 +397,213 @@
 
         <template is="dom-if" if="[[_rich]]">
           <!-- Terpenes -->
+
           <div class="test-result-terpenes zerostate">
-            <paper-checkbox
-              id="terpenePinene"
-              checked="{{pinene}}"
-              class="form-item terpene-result terpene-pinene"
-              noink
-              name="terpenePinene">Pinene</paper-checkbox>
-            <paper-checkbox
-              id="terpeneMyrcene"
-              checked="{{myrcene}}"
-              class="form-item terpene-result terpene-myrcene"
-              noink
-              name="terpeneMyrcene">Myrcene</paper-checkbox>
-            <paper-checkbox
-              id="terpeneLimonene"
-              checked="{{limonene}}"
-              class="form-item terpene-result terpene-limonene"
-              noink
-              name="terpeneLimonene">Limonene</paper-checkbox>
-            <paper-checkbox
-              id="terpeneCaryophyllene"
-              checked="{{caryophyllene}}"
-              class="form-item terpene-result terpene-caryophyllene"
-              noink
-              name="terpeneCaryophyllene">Carophyllene</paper-checkbox>
-            <paper-checkbox
-              id="terpeneLinalool"
-              checked="{{linalool}}"
-              class="form-item terpene-result terpene-linalool"
-              noink
-              name="terpeneLinalool">Linalool</paper-checkbox>
+
+            <div class="terpene-toggle-option myrcene-toggle-option">
+              <div class="myrcene-toggle-container">
+                <paper-checkbox checked="{{myrcene}}" class="form-item terpene-result terpene-myrcene" noink>Myrcene</paper-checkbox>
+              </div><!-- end .myrcene-toggle-container -->
+              <template is="dom-if" if="[[myrcene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{myrceneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-myrcene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .myrcene-toggle-option -->
+
+            <div class="terpene-toggle-option caryophyllene-oxide-toggle-option">
+              <div class="caryophyllene-oxide-toggle-container">
+                <paper-checkbox checked="{{caryophylleneOxide}}" class="form-item terpene-result terpene-caryophyllene-oxide" noink>Caryophyllene oxide</paper-checkbox>
+              </div><!-- end .caryophyllene-oxide-toggle-container -->
+              <template is="dom-if" if="[[caryophylleneOxide]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{caryopylleneOxideValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-caryophyllene-oxide"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .caryophyllene-oxide-toggle-option -->
+
+            <div class="terpene-toggle-option linalool-toggle-option">
+              <div class="linalool-toggle-container">
+                <paper-checkbox checked="{{linalool}}" class="form-item terpene-result terpene-linalool" noink>Linalool</paper-checkbox>
+              </div><!-- end .linalool-toggle-container -->
+              <template is="dom-if" if="[[linalool]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{linaloolValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-linalool"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .linalool-toggle-option -->
+
+            <div class="terpene-toggle-option beta-caryophyllene-toggle-option">
+              <div class="beta-caryophyllene-toggle-container">
+                <paper-checkbox checked="{{betaCaryophyllene}}" class="form-item terpene-result terpene-beta-caryophyllene" noink>β-Caryophyllene</paper-checkbox>
+              </div><!-- end .beta-caryophyllene-toggle-container -->
+              <template is="dom-if" if="[[betaCaryophyllene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{betaCaryophylleneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-caryophyllene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .beta-caryophyllene-toggle-option -->
+
+            <div class="terpene-toggle-option alpha-humulene-toggle-option">
+              <div class="alpha-humulene-toggle-container">
+                <paper-checkbox checked="{{alphaHumulene}}" class="form-item terpene-result terpene-alpha-humulene" noink>α-Humulene</paper-checkbox>
+              </div><!-- end .alpha-humulene-toggle-container -->
+              <template is="dom-if" if="[[alphaHumulene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{alphaHumuleneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-humulene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .alpha-humulene-toggle-option -->
+
+            <div class="terpene-toggle-option alpha-terpineol-toggle-option">
+              <div class="alpha-terpineol-toggle-container">
+                <paper-checkbox checked="{{alphaTerpineol}}" class="form-item terpene-result terpene-alpha-terpineol" noink>α-Terpineol</paper-checkbox>
+              </div><!-- end .alpha-terpineol-toggle-container -->
+              <template is="dom-if" if="[[alphaTerpineol]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{alphaTerpineolValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpineol"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .alpha-terpineol-toggle-option -->
+
+            <div class="terpene-toggle-option camphene-toggle-option">
+              <div class="camphene-toggle-container">
+                <paper-checkbox checked="{{camphene}}" class="form-item terpene-result terpene-camphene" noink>Camphene</paper-checkbox>
+              </div><!-- end .camphene-toggle-container -->
+              <template is="dom-if" if="[[camphene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{campheneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-camphene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .camphene-toggle-option -->
+
+            <div class="terpene-toggle-option fenchol-toggle-option">
+              <div class="fenchol-toggle-container">
+                <paper-checkbox checked="{{fenchol}}" class="form-item terpene-result terpene-fenchol" noink>Fenchol</paper-checkbox>
+              </div><!-- end .fenchol-toggle-container -->
+              <template is="dom-if" if="[[fenchol]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{fencholValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-fenchol"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .fenchol-toggle-option -->
+
+            <div class="terpene-toggle-option alpha-pinene-toggle-option">
+              <div class="alpha-pinene-toggle-container">
+                <paper-checkbox checked="{{alphaPinene}}" class="form-item terpene-result terpene-alpha-pinene" noink>α-Pinene</paper-checkbox>
+              </div><!-- end .alpha-pinene-toggle-container -->
+              <template is="dom-if" if="[[alphaPinene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{alphaPineneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-pinene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .alpha-pinene-toggle-option -->
+
+            <div class="terpene-toggle-option beta-pinene-toggle-option">
+              <div class="beta-pinene-toggle-container">
+                <paper-checkbox checked="{{betaPinene}}" class="form-item terpene-result terpene-beta-pinene" noink>β-Pinene</paper-checkbox>
+              </div><!-- end .beta-pinene-toggle-container -->
+              <template is="dom-if" if="[[betaPinene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{beta-pineneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-pinene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .beta-pinene-toggle-option -->
+
+            <div class="terpene-toggle-option alpha-terpinine-toggle-option">
+              <div class="alpha-terpinine-toggle-container">
+                <paper-checkbox checked="{{alphaTerpinine}}" class="form-item terpene-result terpene-alpha-terpinine" noink>α-Terpinine</paper-checkbox>
+              </div><!-- end .alpha-terpinine-toggle-container -->
+              <template is="dom-if" if="[[alphaTerpinine]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{alphaTerpinineValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpinine"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .alpha-terpinine-toggle-option -->
+
+            <div class="terpene-toggle-option gamma-terpinine-toggle-option">
+              <div class="gamma-terpinine-toggle-container">
+                <paper-checkbox checked="{{gammaTerpinine}}" class="form-item terpene-result terpene-gamma-terpinine" noink>γ-Terpinine</paper-checkbox>
+              </div><!-- end .gamma-terpinine-toggle-container -->
+              <template is="dom-if" if="[[gammaTerpinine]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{gammaTerpinineValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-gamma-terpinine"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .gamma-terpinine-toggle-option -->
+
+            <div class="terpene-toggle-option limonene-toggle-option">
+              <div class="limonene-toggle-container">
+                <paper-checkbox checked="{{limonene}}" class="form-item terpene-result terpene-limonene" noink>Limonene</paper-checkbox>
+              </div><!-- end .limonene-toggle-container -->
+              <template is="dom-if" if="[[limonene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{limoneneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-limonene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .limonene-toggle-option -->
+
+            <div class="terpene-toggle-option carene-toggle-option">
+              <div class="carene-toggle-container">
+                <paper-checkbox checked="{{carene}}" class="form-item terpene-result terpene-carene" noink>Carene</paper-checkbox>
+              </div><!-- end .carene-toggle-container -->
+              <template is="dom-if" if="[[carene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{careneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-carene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .carene-toggle-option -->
+
+            <div class="terpene-toggle-option beta-ocimene-toggle-option">
+              <div class="beta-ocimene-toggle-container">
+                <paper-checkbox checked="{{betaOcimene}}" class="form-item terpene-result terpene-beta-ocimene" noink>β-Ocimene</paper-checkbox>
+              </div><!-- end .beta-ocimene-toggle-container -->
+              <template is="dom-if" if="[[betaOcimene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{betaOcimeneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-ocimene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .beta-ocimene-toggle-option -->
+
+            <div class="terpene-toggle-option alpha-phellandrene-toggle-option">
+              <div class="alpha-phellandrene-toggle-container">
+                <paper-checkbox checked="{{alphaPhellandrene}}" class="form-item terpene-result terpene-alpha-phellandrene" noink>α-Phellandrene</paper-checkbox>
+              </div><!-- end .alpha-phellandrene-toggle-container -->
+              <template is="dom-if" if="[[alphaPhellandrene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{alphaPhellandreneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-phellandrene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .alpha-phellandrene-toggle-option -->
+
+            <div class="terpene-toggle-option terpinolene-toggle-option">
+              <div class="terpinolene-toggle-container">
+                <paper-checkbox checked="{{terpinolene}}" class="form-item terpene-result terpene-terpinolene" noink>Terpinolene</paper-checkbox>
+              </div><!-- end .terpinolene-toggle-container -->
+              <template is="dom-if" if="[[terpinolene]]">
+                <div class="terpene-amount-container">
+                  <paper-slider pin value="{{terpinoleneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .terpinolene-toggle-option -->
+
           </div><!-- end .test-result-terpenes -->
         </template>
       </template>
@@ -217,11 +613,24 @@
         <div class="bloombox-test-results-display">
           <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc)]]</span></iron-label>
           <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd)]]</span></iron-label>
-          <iron-label class="terpene-label pinene-label" hidden$="[[!pinene]]"><span>PNE</span></iron-label>
+
           <iron-label class="terpene-label myrcene-label" hidden$="[[!myrcene]]"><span>MYR</span></iron-label>
-          <iron-label class="terpene-label limonene-label" hidden$="[[!limonene]]"><span>LMN</span></iron-label>
-          <iron-label class="terpene-label caryophyllene-label" hidden$="[[!caryophyllene]]"><span>CRY</span></iron-label>
+          <iron-label class="terpene-label caryopyllene-oxide-label" hidden$="[[!caryopylleneOxide]]"><span>CRY-O</span></iron-label>
           <iron-label class="terpene-label linalool-label" hidden$="[[!linalool]]"><span>LIN</span></iron-label>
+          <iron-label class="terpene-label beta-caryophyllene-label" hidden$="[[!betaCaryophyllene]]"><span>β-CRY</span></iron-label>
+          <iron-label class="terpene-label alpha-humulene-label" hidden$="[[!alphaHumulene]]"><span>α-HUM</span></iron-label>
+          <iron-label class="terpene-label alpha-terpineol-label" hidden$="[[!alphaTerpineol]]"><span>α-TRP</span></iron-label>
+          <iron-label class="terpene-label camphene-label" hidden$="[[!camphene]]"><span>CAM</span></iron-label>
+          <iron-label class="terpene-label fenchol-label" hidden$="[[!fenchol]]"><span>FEN</span></iron-label>
+          <iron-label class="terpene-label beta-pinene-label" hidden$="[[!betaPinene]]"><span>β-PNE</span></iron-label>
+          <iron-label class="terpene-label alpha-terpinine-label" hidden$="[[!alphaTerpinine]]"><span>α-TPN</span></iron-label>
+          <iron-label class="terpene-label alpha-pinene-label" hidden$="[[!alphaPinene]]"><span>α-PNE</span></iron-label>
+          <iron-label class="terpene-label gamma-terpinine-label" hidden$="[[!gammaTerpinine]]"><span>γ-TPN</span></iron-label>
+          <iron-label class="terpene-label limonene-label" hidden$="[[!limonene]]"><span>LMN</span></iron-label>
+          <iron-label class="terpene-label carene-label" hidden$="[[!carene]]"><span>CRN</span></iron-label>
+          <iron-label class="terpene-label beta-ocimene-label" hidden$="[[!betaOcimene]]"><span>β-OCI</span></iron-label>
+          <iron-label class="terpene-label alpha-phellandrene-label" hidden$="[[!alphaPhellandrene]]"><span>α-PHL</span></iron-label>
+          <iron-label class="terpene-label terpinolene-label" hidden$="[[!terpinolene]]"><span>TPO</span></iron-label>
         </div><!-- end .bloombox-test-results-display -->
       </template>
     </template>
@@ -247,7 +656,7 @@
          */
         _overlayActive: {
           type: Boolean,
-          computed: '_computeOverlay(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene)'
+          computed: '_computeOverlay(zerostate, cbd, thc, myrcene, caryophylleneOxide, linalool, betaCaryophyllene, alphaHumulene, alphaTerpineol, camphene, fenchol, betaPinene, alphaTerpinine, alphaPinene, gammaTerpinine, limonene, carene, betaOcimene, alphaPhellandrene, terpinolene)'
         },
 
         /**
@@ -288,50 +697,244 @@
           value: 0
         },
 
-        /**
-         * Flag indicating the presence of the terpene `limonene`.
-         */
-        limonene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
 
         /**
-         * Flag indicating the presence of the terpene `pinene`.
-         */
-        pinene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-
-        /**
-         * Flag indicating the presence of the terpene `myrcene`.
+         * Flag indicating the presence of the terpene `myrcene` and amount.
          */
         myrcene: {
           type: Boolean,
           notify: true,
           value: false
         },
+        myrceneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
 
         /**
-         * Flag indicating the presence of the terpene `linalool`.
+         * Flag indicating the presence of the terpene `caryophylleneOxide` and amount.
+         */
+        caryophylleneOxide: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        caryophylleneOxideValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `linalool` and amount.
          */
         linalool: {
           type: Boolean,
           notify: true,
           value: false
         },
+        linaloolValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
 
         /**
-         * Flag indicating the presence of the terpene `caryophyllene`.
+         * Flag indicating the presence of the terpene `betaCaryophyllene` and amount.
          */
-        caryophyllene: {
+        betaCaryophyllene: {
           type: Boolean,
           notify: true,
           value: false
-        }
+        },
+        betaCaryophylleneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `alphaHumulene` and amount.
+         */
+        alphaHumulene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        alphaHumuleneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `alphaTerpineol` and amount.
+         */
+        alphaTerpineol: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        alphaTerpineolValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `camphene` and amount.
+         */
+        camphene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        campheneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `fenchol` and amount.
+         */
+        fenchol: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        fencholValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `betaPinene` and amount.
+         */
+        betaPinene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        betaPineneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `alphaTerpinine` and amount.
+         */
+        alphaTerpinine: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        alphaTerpinineValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `alphaPinene` and amount.
+         */
+        alphaPinene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        alphaPineneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `gammaTerpinine` and amount.
+         */
+        gammaTerpinine: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        gammaTerpinineValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `limonene` and amount.
+         */
+        limonene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        limoneneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `carene` and amount.
+         */
+        carene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        careneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `betaOcimene` and amount.
+         */
+        betaOcimene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        betaOcimeneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `alphaPhellandrene` and amount.
+         */
+        alphaPhellandrene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        alphaPhellandreneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
+
+        /**
+         * Flag indicating the presence of the terpene `terpinolene` and amount.
+         */
+        terpinolene: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+        terpinoleneValue: {
+          type: Number,
+          notify: true,
+          value: 0.0
+        },
       },
 
       /**
@@ -346,8 +949,8 @@
        * Computed property function that controls whether we should be
        * showing a "Results Pending" overlay.
        */
-      _computeOverlay: function(zerostate, cbd, thc, limonene, pinene, myrcene, linalool, caryophyllene) {
-        if (!zerostate && cbd === 0 && thc === 0 && limonene === false && pinene === false && myrcene == false && linalool == false && caryophyllene == false)
+      _computeOverlay: function(zerostate, cbd, thc, myrcene, caryophylleneOxide, linalool, betaCaryophyllene, alphaHumulene, alphaTerpineol, camphene, fenchol, betaPinene, alphaTerpinine, alphaPinene, gammaTerpinine, limonene, carene, betaOcimene, alphaPhellandrene, terpinolene) {
+        if (!zerostate && cbd === 0 && thc === 0 && myrcene === false && caryophylleneOxide === false && linalool === false && betaCaryophyllene === false && alphaHumulene === false && alphaTerpineol === false && camphene === false && fenchol === false && betaPinene === false && alphaTerpinine === false && alphaPinene === false && gammaTerpinine === false && limonene === false && carene === false && betaOcimene === false && alphaPhellandrene === false && terpinolene === false)
           return this._toggleOverlay(true);
         return this._toggleOverlay(false);
       },
