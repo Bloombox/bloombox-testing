@@ -402,11 +402,11 @@
 
             <div class="terpene-toggle-option myrcene-toggle-option">
               <div class="myrcene-toggle-container">
-                <paper-checkbox checked="{{myrcene}}" class="form-item terpene-result terpene-myrcene" noink>Myrcene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.myrcene.presence}}" class="form-item terpene-result terpene-myrcene" noink>Myrcene</paper-checkbox>
               </div><!-- end .myrcene-toggle-container -->
-              <template is="dom-if" if="[[myrcene]]">
+              <template is="dom-if" if="[[terpenes.myrcene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{myrceneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-myrcene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.myrcene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-myrcene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -414,11 +414,11 @@
 
             <div class="terpene-toggle-option caryophyllene-oxide-toggle-option">
               <div class="caryophyllene-oxide-toggle-container">
-                <paper-checkbox checked="{{caryophylleneOxide}}" class="form-item terpene-result terpene-caryophyllene-oxide" noink>Caryophyllene oxide</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.caryophylleneOxide.presence}}" class="form-item terpene-result terpene-caryophyllene-oxide" noink>Caryophyllene oxide</paper-checkbox>
               </div><!-- end .caryophyllene-oxide-toggle-container -->
-              <template is="dom-if" if="[[caryophylleneOxide]]">
+              <template is="dom-if" if="[[terpenes.caryophylleneOxide.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{caryopylleneOxideValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-caryophyllene-oxide"></paper-slider>
+                  <paper-slider pin value="{{terpenes.caryophylleneOxide.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-caryophyllene-oxide"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -426,11 +426,11 @@
 
             <div class="terpene-toggle-option linalool-toggle-option">
               <div class="linalool-toggle-container">
-                <paper-checkbox checked="{{linalool}}" class="form-item terpene-result terpene-linalool" noink>Linalool</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.linalool.presence}}" class="form-item terpene-result terpene-linalool" noink>Linalool</paper-checkbox>
               </div><!-- end .linalool-toggle-container -->
-              <template is="dom-if" if="[[linalool]]">
+              <template is="dom-if" if="[[terpenes.linalool.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{linaloolValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-linalool"></paper-slider>
+                  <paper-slider pin value="{{terpenes.linalool.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-linalool"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -438,11 +438,11 @@
 
             <div class="terpene-toggle-option beta-caryophyllene-toggle-option">
               <div class="beta-caryophyllene-toggle-container">
-                <paper-checkbox checked="{{betaCaryophyllene}}" class="form-item terpene-result terpene-beta-caryophyllene" noink>β-Caryophyllene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.betaCaryophyllene.presence}}" class="form-item terpene-result terpene-beta-caryophyllene" noink>β-Caryophyllene</paper-checkbox>
               </div><!-- end .beta-caryophyllene-toggle-container -->
-              <template is="dom-if" if="[[betaCaryophyllene]]">
+              <template is="dom-if" if="[[terpenes.betaCaryophyllene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{betaCaryophylleneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-caryophyllene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.betaCaryophyllene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-caryophyllene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -450,11 +450,11 @@
 
             <div class="terpene-toggle-option alpha-humulene-toggle-option">
               <div class="alpha-humulene-toggle-container">
-                <paper-checkbox checked="{{alphaHumulene}}" class="form-item terpene-result terpene-alpha-humulene" noink>α-Humulene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.alphaHumulene.presence}}" class="form-item terpene-result terpene-alpha-humulene" noink>α-Humulene</paper-checkbox>
               </div><!-- end .alpha-humulene-toggle-container -->
-              <template is="dom-if" if="[[alphaHumulene]]">
+              <template is="dom-if" if="[[terpenes.alphaHumulene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{alphaHumuleneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-humulene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.alphaHumulene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-humulene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -462,11 +462,11 @@
 
             <div class="terpene-toggle-option alpha-terpineol-toggle-option">
               <div class="alpha-terpineol-toggle-container">
-                <paper-checkbox checked="{{alphaTerpineol}}" class="form-item terpene-result terpene-alpha-terpineol" noink>α-Terpineol</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.alphaTerpineol.presence}}" class="form-item terpene-result terpene-alpha-terpineol" noink>α-Terpineol</paper-checkbox>
               </div><!-- end .alpha-terpineol-toggle-container -->
-              <template is="dom-if" if="[[alphaTerpineol]]">
+              <template is="dom-if" if="[[terpenes.alphaTerpineol.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{alphaTerpineolValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpineol"></paper-slider>
+                  <paper-slider pin value="{{terpenes.alphaTerpineol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpineol"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -474,11 +474,11 @@
 
             <div class="terpene-toggle-option camphene-toggle-option">
               <div class="camphene-toggle-container">
-                <paper-checkbox checked="{{camphene}}" class="form-item terpene-result terpene-camphene" noink>Camphene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.camphene.presence}}" class="form-item terpene-result terpene-camphene" noink>Camphene</paper-checkbox>
               </div><!-- end .camphene-toggle-container -->
-              <template is="dom-if" if="[[camphene]]">
+              <template is="dom-if" if="[[terpenes.camphene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{campheneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-camphene"></paper-slider>
+                  <paper-slider pin value="{{camphene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-camphene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -486,11 +486,11 @@
 
             <div class="terpene-toggle-option fenchol-toggle-option">
               <div class="fenchol-toggle-container">
-                <paper-checkbox checked="{{fenchol}}" class="form-item terpene-result terpene-fenchol" noink>Fenchol</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.fenchol.presence}}" class="form-item terpene-result terpene-fenchol" noink>Fenchol</paper-checkbox>
               </div><!-- end .fenchol-toggle-container -->
-              <template is="dom-if" if="[[fenchol]]">
+              <template is="dom-if" if="[[terpenes.fenchol.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{fencholValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-fenchol"></paper-slider>
+                  <paper-slider pin value="{{terpenes.fenchol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-fenchol"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -498,11 +498,11 @@
 
             <div class="terpene-toggle-option alpha-pinene-toggle-option">
               <div class="alpha-pinene-toggle-container">
-                <paper-checkbox checked="{{alphaPinene}}" class="form-item terpene-result terpene-alpha-pinene" noink>α-Pinene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.alphaPinene.presence}}" class="form-item terpene-result terpene-alpha-pinene" noink>α-Pinene</paper-checkbox>
               </div><!-- end .alpha-pinene-toggle-container -->
-              <template is="dom-if" if="[[alphaPinene]]">
+              <template is="dom-if" if="[[terpenes.alphaPinene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{alphaPineneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-pinene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.alphaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-pinene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -510,11 +510,11 @@
 
             <div class="terpene-toggle-option beta-pinene-toggle-option">
               <div class="beta-pinene-toggle-container">
-                <paper-checkbox checked="{{betaPinene}}" class="form-item terpene-result terpene-beta-pinene" noink>β-Pinene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.betaPinene.presence}}" class="form-item terpene-result terpene-beta-pinene" noink>β-Pinene</paper-checkbox>
               </div><!-- end .beta-pinene-toggle-container -->
-              <template is="dom-if" if="[[betaPinene]]">
+              <template is="dom-if" if="[[terpenes.betaPinene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{beta-pineneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-pinene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.betaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-pinene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -522,11 +522,11 @@
 
             <div class="terpene-toggle-option alpha-terpinine-toggle-option">
               <div class="alpha-terpinine-toggle-container">
-                <paper-checkbox checked="{{alphaTerpinine}}" class="form-item terpene-result terpene-alpha-terpinine" noink>α-Terpinine</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.alphaTerpinine.presence}}" class="form-item terpene-result terpene-alpha-terpinine" noink>α-Terpinine</paper-checkbox>
               </div><!-- end .alpha-terpinine-toggle-container -->
-              <template is="dom-if" if="[[alphaTerpinine]]">
+              <template is="dom-if" if="[[terpenes.alphaTerpinine.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{alphaTerpinineValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpinine"></paper-slider>
+                  <paper-slider pin value="{{terpenes.alphaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpinine"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -534,11 +534,11 @@
 
             <div class="terpene-toggle-option gamma-terpinine-toggle-option">
               <div class="gamma-terpinine-toggle-container">
-                <paper-checkbox checked="{{gammaTerpinine}}" class="form-item terpene-result terpene-gamma-terpinine" noink>γ-Terpinine</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.gammaTerpinine.presence}}" class="form-item terpene-result terpene-gamma-terpinine" noink>γ-Terpinine</paper-checkbox>
               </div><!-- end .gamma-terpinine-toggle-container -->
-              <template is="dom-if" if="[[gammaTerpinine]]">
+              <template is="dom-if" if="[[terpenes.gammaTerpinine.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{gammaTerpinineValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-gamma-terpinine"></paper-slider>
+                  <paper-slider pin value="{{terpenes.gammaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-gamma-terpinine"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -546,11 +546,11 @@
 
             <div class="terpene-toggle-option limonene-toggle-option">
               <div class="limonene-toggle-container">
-                <paper-checkbox checked="{{limonene}}" class="form-item terpene-result terpene-limonene" noink>Limonene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.limonene.presence}}" class="form-item terpene-result terpene-limonene" noink>Limonene</paper-checkbox>
               </div><!-- end .limonene-toggle-container -->
-              <template is="dom-if" if="[[limonene]]">
+              <template is="dom-if" if="[[terpenes.limonene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{limoneneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-limonene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.limonene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-limonene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -558,11 +558,11 @@
 
             <div class="terpene-toggle-option carene-toggle-option">
               <div class="carene-toggle-container">
-                <paper-checkbox checked="{{carene}}" class="form-item terpene-result terpene-carene" noink>Carene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.carene.presence}}" class="form-item terpene-result terpene-carene" noink>Carene</paper-checkbox>
               </div><!-- end .carene-toggle-container -->
-              <template is="dom-if" if="[[carene]]">
+              <template is="dom-if" if="[[terpenes.carene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{careneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-carene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.carene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-carene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -570,11 +570,11 @@
 
             <div class="terpene-toggle-option beta-ocimene-toggle-option">
               <div class="beta-ocimene-toggle-container">
-                <paper-checkbox checked="{{betaOcimene}}" class="form-item terpene-result terpene-beta-ocimene" noink>β-Ocimene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.betaOcimene.presence}}" class="form-item terpene-result terpene-beta-ocimene" noink>β-Ocimene</paper-checkbox>
               </div><!-- end .beta-ocimene-toggle-container -->
-              <template is="dom-if" if="[[betaOcimene]]">
+              <template is="dom-if" if="[[terpenes.betaOcimene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{betaOcimeneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-ocimene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.betaOcimene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-ocimene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -582,11 +582,11 @@
 
             <div class="terpene-toggle-option alpha-phellandrene-toggle-option">
               <div class="alpha-phellandrene-toggle-container">
-                <paper-checkbox checked="{{alphaPhellandrene}}" class="form-item terpene-result terpene-alpha-phellandrene" noink>α-Phellandrene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.alphaPhellandrene.presence}}" class="form-item terpene-result terpene-alpha-phellandrene" noink>α-Phellandrene</paper-checkbox>
               </div><!-- end .alpha-phellandrene-toggle-container -->
-              <template is="dom-if" if="[[alphaPhellandrene]]">
+              <template is="dom-if" if="[[terpenes.alphaPhellandrene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{alphaPhellandreneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-phellandrene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.alphaPhellandrene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-phellandrene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -594,11 +594,11 @@
 
             <div class="terpene-toggle-option terpinolene-toggle-option">
               <div class="terpinolene-toggle-container">
-                <paper-checkbox checked="{{terpinolene}}" class="form-item terpene-result terpene-terpinolene" noink>Terpinolene</paper-checkbox>
+                <paper-checkbox checked="{{terpenes.terpinolene.presence}}" class="form-item terpene-result terpene-terpinolene" noink>Terpinolene</paper-checkbox>
               </div><!-- end .terpinolene-toggle-container -->
-              <template is="dom-if" if="[[terpinolene]]">
+              <template is="dom-if" if="[[terpenes.terpinolene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpinoleneValue}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
+                  <paper-slider pin value="{{terpenes.terpinolene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -614,23 +614,23 @@
           <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc)]]</span></iron-label>
           <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd)]]</span></iron-label>
 
-          <iron-label class="terpene-label myrcene-label" hidden$="[[!myrcene]]"><span>MYR</span></iron-label>
-          <iron-label class="terpene-label caryopyllene-oxide-label" hidden$="[[!caryopylleneOxide]]"><span>CRY-O</span></iron-label>
-          <iron-label class="terpene-label linalool-label" hidden$="[[!linalool]]"><span>LIN</span></iron-label>
-          <iron-label class="terpene-label beta-caryophyllene-label" hidden$="[[!betaCaryophyllene]]"><span>β-CRY</span></iron-label>
-          <iron-label class="terpene-label alpha-humulene-label" hidden$="[[!alphaHumulene]]"><span>α-HUM</span></iron-label>
-          <iron-label class="terpene-label alpha-terpineol-label" hidden$="[[!alphaTerpineol]]"><span>α-TRP</span></iron-label>
-          <iron-label class="terpene-label camphene-label" hidden$="[[!camphene]]"><span>CAM</span></iron-label>
-          <iron-label class="terpene-label fenchol-label" hidden$="[[!fenchol]]"><span>FEN</span></iron-label>
-          <iron-label class="terpene-label beta-pinene-label" hidden$="[[!betaPinene]]"><span>β-PNE</span></iron-label>
-          <iron-label class="terpene-label alpha-terpinine-label" hidden$="[[!alphaTerpinine]]"><span>α-TPN</span></iron-label>
-          <iron-label class="terpene-label alpha-pinene-label" hidden$="[[!alphaPinene]]"><span>α-PNE</span></iron-label>
-          <iron-label class="terpene-label gamma-terpinine-label" hidden$="[[!gammaTerpinine]]"><span>γ-TPN</span></iron-label>
-          <iron-label class="terpene-label limonene-label" hidden$="[[!limonene]]"><span>LMN</span></iron-label>
-          <iron-label class="terpene-label carene-label" hidden$="[[!carene]]"><span>CRN</span></iron-label>
-          <iron-label class="terpene-label beta-ocimene-label" hidden$="[[!betaOcimene]]"><span>β-OCI</span></iron-label>
-          <iron-label class="terpene-label alpha-phellandrene-label" hidden$="[[!alphaPhellandrene]]"><span>α-PHL</span></iron-label>
-          <iron-label class="terpene-label terpinolene-label" hidden$="[[!terpinolene]]"><span>TPO</span></iron-label>
+          <iron-label class="terpene-label myrcene-label" hidden$="[[!terpenes.myrcene.presence]]"><span>MYR</span></iron-label>
+          <iron-label class="terpene-label caryopyllene-oxide-label" hidden$="[[!terpenes.caryopylleneOxide.presence]]"><span>CRY-O</span></iron-label>
+          <iron-label class="terpene-label linalool-label" hidden$="[[!terpenes.linalool.presence]]"><span>LIN</span></iron-label>
+          <iron-label class="terpene-label beta-caryophyllene-label" hidden$="[[!terpenes.betaCaryophyllene.presence]]"><span>β-CRY</span></iron-label>
+          <iron-label class="terpene-label alpha-humulene-label" hidden$="[[!terpenes.alphaHumulene.presence]]"><span>α-HUM</span></iron-label>
+          <iron-label class="terpene-label alpha-terpineol-label" hidden$="[[!terpenes.alphaTerpineol.presence]]"><span>α-TRP</span></iron-label>
+          <iron-label class="terpene-label camphene-label" hidden$="[[!terpenes.camphene.presence]]"><span>CAM</span></iron-label>
+          <iron-label class="terpene-label fenchol-label" hidden$="[[!terpenes.fenchol.presence]]"><span>FEN</span></iron-label>
+          <iron-label class="terpene-label beta-pinene-label" hidden$="[[!terpenes.betaPinene.presence]]"><span>β-PNE</span></iron-label>
+          <iron-label class="terpene-label alpha-terpinine-label" hidden$="[[!terpenes.alphaTerpinine.presence]]"><span>α-TPN</span></iron-label>
+          <iron-label class="terpene-label alpha-pinene-label" hidden$="[[!terpenes.alphaPinene.presence]]"><span>α-PNE</span></iron-label>
+          <iron-label class="terpene-label gamma-terpinine-label" hidden$="[[!terpenes.gammaTerpinine.presence]]"><span>γ-TPN</span></iron-label>
+          <iron-label class="terpene-label limonene-label" hidden$="[[!terpenes.limonene.presence]]"><span>LMN</span></iron-label>
+          <iron-label class="terpene-label carene-label" hidden$="[[!terpenes.carene.presence]]"><span>CRN</span></iron-label>
+          <iron-label class="terpene-label beta-ocimene-label" hidden$="[[!terpenes.betaOcimene.presence]]"><span>β-OCI</span></iron-label>
+          <iron-label class="terpene-label alpha-phellandrene-label" hidden$="[[!terpenes.alphaPhellandrene.presence]]"><span>α-PHL</span></iron-label>
+          <iron-label class="terpene-label terpinolene-label" hidden$="[[!terpenes.terpinolene.presence]]"><span>TPO</span></iron-label>
         </div><!-- end .bloombox-test-results-display -->
       </template>
     </template>
@@ -656,7 +656,7 @@
          */
         _overlayActive: {
           type: Boolean,
-          computed: '_computeOverlay(zerostate, cbd, thc, myrcene, caryophylleneOxide, linalool, betaCaryophyllene, alphaHumulene, alphaTerpineol, camphene, fenchol, betaPinene, alphaTerpinine, alphaPinene, gammaTerpinine, limonene, carene, betaOcimene, alphaPhellandrene, terpinolene)'
+          computed: '_computeOverlay(zerostate, cbd, thc, terpenes)'
         },
 
         /**
@@ -697,243 +697,100 @@
           value: 0
         },
 
-
         /**
-         * Flag indicating the presence of the terpene `myrcene` and amount.
+         * Spread of terpene values and their ratings.
          */
-        myrcene: {
-          type: Boolean,
+        terpenes: {
+          type: Object,
           notify: true,
-          value: false
-        },
-        myrceneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+          value: function() {
+            return {
+              myrcene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `caryophylleneOxide` and amount.
-         */
-        caryophylleneOxide: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        caryophylleneOxideValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              caryophylleneOxide: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `linalool` and amount.
-         */
-        linalool: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        linaloolValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              linalool: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `betaCaryophyllene` and amount.
-         */
-        betaCaryophyllene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        betaCaryophylleneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              betaCaryophyllene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `alphaHumulene` and amount.
-         */
-        alphaHumulene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        alphaHumuleneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              alphaHumulene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `alphaTerpineol` and amount.
-         */
-        alphaTerpineol: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        alphaTerpineolValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              alphaTerpineol: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `camphene` and amount.
-         */
-        camphene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        campheneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              camphene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `fenchol` and amount.
-         */
-        fenchol: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        fencholValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              fenchol: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `betaPinene` and amount.
-         */
-        betaPinene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        betaPineneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              alphaPinene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `alphaTerpinine` and amount.
-         */
-        alphaTerpinine: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        alphaTerpinineValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              betaPinene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `alphaPinene` and amount.
-         */
-        alphaPinene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        alphaPineneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              alphaTerpinine: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `gammaTerpinine` and amount.
-         */
-        gammaTerpinine: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        gammaTerpinineValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              gammaTerpinine: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `limonene` and amount.
-         */
-        limonene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        limoneneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              limonene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `carene` and amount.
-         */
-        carene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        careneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              carene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `betaOcimene` and amount.
-         */
-        betaOcimene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        betaOcimeneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              betaOcimene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `alphaPhellandrene` and amount.
-         */
-        alphaPhellandrene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        alphaPhellandreneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
-        },
+              alphaPhellandrene: {
+                presence: false,
+                rating: 0.0
+              },
 
-        /**
-         * Flag indicating the presence of the terpene `terpinolene` and amount.
-         */
-        terpinolene: {
-          type: Boolean,
-          notify: true,
-          value: false
-        },
-        terpinoleneValue: {
-          type: Number,
-          notify: true,
-          value: 0.0
+              terpinolene: {
+                presence: false,
+                rating: 0.0
+              }
+            }
+          }
         },
       },
 
@@ -949,8 +806,8 @@
        * Computed property function that controls whether we should be
        * showing a "Results Pending" overlay.
        */
-      _computeOverlay: function(zerostate, cbd, thc, myrcene, caryophylleneOxide, linalool, betaCaryophyllene, alphaHumulene, alphaTerpineol, camphene, fenchol, betaPinene, alphaTerpinine, alphaPinene, gammaTerpinine, limonene, carene, betaOcimene, alphaPhellandrene, terpinolene) {
-        if (!zerostate && cbd === 0 && thc === 0 && myrcene === false && caryophylleneOxide === false && linalool === false && betaCaryophyllene === false && alphaHumulene === false && alphaTerpineol === false && camphene === false && fenchol === false && betaPinene === false && alphaTerpinine === false && alphaPinene === false && gammaTerpinine === false && limonene === false && carene === false && betaOcimene === false && alphaPhellandrene === false && terpinolene === false)
+      _computeOverlay: function(zerostate, cbd, thc, terpenes) {
+        if (!zerostate && cbd === 0 && thc === 0 && !(typeof terpenes === "object" && Object.keys(terpenes).length > 0))
           return this._toggleOverlay(true);
         return this._toggleOverlay(false);
       },
