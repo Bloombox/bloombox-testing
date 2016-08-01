@@ -397,9 +397,7 @@
 
         <template is="dom-if" if="[[_rich]]">
           <!-- Terpenes -->
-
           <div class="test-result-terpenes zerostate">
-
             <div class="terpene-toggle-option myrcene-toggle-option">
               <div class="myrcene-toggle-container">
                 <paper-checkbox checked="{{terpenes.myrcene.presence}}" class="form-item terpene-result terpene-myrcene" noink>Myrcene</paper-checkbox>
@@ -749,17 +747,6 @@
         },
 
         /**
-         * Spread of terpene values and their ratings.
-         */
-        _terpenes: {
-          type: Object,
-          notify: true,
-          value: function() {
-            return defaultTerpeneConfig();
-          }
-        },
-
-        /**
          * Flag indicating that we should be showing a form to edit test results.
          */
         zerostate: {
@@ -803,8 +790,10 @@
         terpenes: {
           type: Object,
           notify: true,
-          readOnly: true,
-          computed: '_computeTerpeneSpread(_terpenes)'
+          observer: '_observeTerpenes',
+          value: function() {
+            return defaultTerpeneConfig();
+          }
         }
       },
 
@@ -817,18 +806,6 @@
       },
 
       /**
-       * Computed property function that prepares a manifest of terpene
-       * testing results.
-       */
-      _computeTerpeneSpread: function(terpeneData) {
-        if (typeof terpeneData === "object" && !(Object.keys(terpeneData).length === 0 && terpeneData.constructor === Object)) {
-          // we have terpene data
-          return terpeneData;
-        }
-        return defaultTerpeneConfig();
-      },
-
-      /**
        * Computed property function that controls whether we should be
        * showing a "Results Pending" overlay.
        */
@@ -836,6 +813,16 @@
         if (!zerostate && cbd === 0 && thc === 0 && !(typeof terpenes === "object" && Object.keys(terpenes).length > 0))
           return this._toggleOverlay(true);
         return this._toggleOverlay(false);
+      },
+
+      /**
+       * Property observer that makes sure terpene data is properly
+       * formatted.
+       */
+      _observeTerpenes: function(terpeneData) {
+        if (terpeneData === undefined || terpeneData == null) {
+          this.terpenes = defaultTerpeneConfig();
+        }
       },
 
       /**
