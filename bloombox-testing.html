@@ -637,6 +637,95 @@
   </div><!-- end #widgetWrap.bloombox-testing-content -->
 
   <script>
+    function defaultTerpeneConfig() {
+      return {
+        myrcene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        caryophylleneOxide: {
+          presence: false,
+          rating: 0.0
+        },
+
+        linalool: {
+          presence: false,
+          rating: 0.0
+        },
+
+        betaCaryophyllene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        alphaHumulene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        alphaTerpineol: {
+          presence: false,
+          rating: 0.0
+        },
+
+        camphene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        fenchol: {
+          presence: false,
+          rating: 0.0
+        },
+
+        alphaPinene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        betaPinene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        alphaTerpinine: {
+          presence: false,
+          rating: 0.0
+        },
+
+        gammaTerpinine: {
+          presence: false,
+          rating: 0.0
+        },
+
+        limonene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        carene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        betaOcimene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        alphaPhellandrene: {
+          presence: false,
+          rating: 0.0
+        },
+
+        terpinolene: {
+          presence: false,
+          rating: 0.0
+        }
+      }
+    };
+
     Polymer.BloomboxTesting = Polymer({
       is: 'bloombox-testing',
 
@@ -657,6 +746,17 @@
         _overlayActive: {
           type: Boolean,
           computed: '_computeOverlay(zerostate, cbd, thc, terpenes)'
+        },
+
+        /**
+         * Spread of terpene values and their ratings.
+         */
+        _terpenes: {
+          type: Object,
+          notify: true,
+          value: function() {
+            return defaultTerpeneConfig();
+          }
         },
 
         /**
@@ -698,100 +798,14 @@
         },
 
         /**
-         * Spread of terpene values and their ratings.
+         * Computed, read-only function providing terpene status.
          */
         terpenes: {
           type: Object,
           notify: true,
-          value: function() {
-            return {
-              myrcene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              caryophylleneOxide: {
-                presence: false,
-                rating: 0.0
-              },
-
-              linalool: {
-                presence: false,
-                rating: 0.0
-              },
-
-              betaCaryophyllene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              alphaHumulene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              alphaTerpineol: {
-                presence: false,
-                rating: 0.0
-              },
-
-              camphene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              fenchol: {
-                presence: false,
-                rating: 0.0
-              },
-
-              alphaPinene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              betaPinene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              alphaTerpinine: {
-                presence: false,
-                rating: 0.0
-              },
-
-              gammaTerpinine: {
-                presence: false,
-                rating: 0.0
-              },
-
-              limonene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              carene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              betaOcimene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              alphaPhellandrene: {
-                presence: false,
-                rating: 0.0
-              },
-
-              terpinolene: {
-                presence: false,
-                rating: 0.0
-              }
-            }
-          }
-        },
+          readOnly: true,
+          computed: '_computeTerpeneSpread(_terpenes)'
+        }
       },
 
       /**
@@ -800,6 +814,18 @@
        */
       _computeRichMode: function(mode) {
         return mode == "rich";
+      },
+
+      /**
+       * Computed property function that prepares a manifest of terpene
+       * testing results.
+       */
+      _computeTerpeneSpread: function(terpeneData) {
+        if (typeof terpeneData === "object" && !(Object.keys(terpeneData).length === 0 && terpeneData.constructor === Object)) {
+          // we have terpene data
+          return terpeneData;
+        }
+        return defaultTerpeneConfig();
       },
 
       /**
