@@ -10,8 +10,12 @@
 
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-label/iron-label.html">
+
 <link rel="import" href="../paper-slider/paper-slider.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+
 <link rel="import" href="../bloombox-styles/bloombox-styles.html">
 <link rel="import" href="../bloombox-product/bloombox-product.html">
 
@@ -23,7 +27,7 @@
         display: inline-block;
         position: relative;
         min-height: 35px;
-        min-width: 300px;
+        width: 100%;
         cursor: default;
       }
 
@@ -31,6 +35,11 @@
         padding: 5px;
         border-radius: 3px;
         margin-right: 10px;
+      }
+
+      :host .zerostate iron-label {
+        display: flex;
+        padding: 0;
       }
 
       :host paper-slider {
@@ -63,6 +72,28 @@
       :host .terpene-toggle-option {
         display: flex;
         align-items: center;
+        margin-right: 5px;
+        height: 56px;
+      }
+
+      :host .test-result-terpenes {
+        flex: 1 1 70%;
+        max-height: 200px;
+        background: #dfdfdf;
+        padding: 5px;
+        overflow-x: scroll;
+      }
+
+      :host .test-result-terpenes h3 {
+        margin: 0;
+        font-size: 8pt;
+        text-transform: uppercase;
+        -webkit-margin-start: 0;
+        -webkit-margin-end: 0;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        font-weight: bold;
+        text-decoration: underline;
       }
 
       /*  myrcene styling  */
@@ -320,8 +351,16 @@
         --paper-slider-pin-color: var(--testing-terpinolene-color, #ce6dbd);
       }  
 
-      :host .test-result-rating {
-        padding: 10px;
+      :host .test-result-ratings {
+        flex: 1 1 30%;
+      }
+
+      :host .test-result-terpenes {
+        flex: 1 1 70%;
+      }
+
+      :host .test-rating-mode {
+        margin-bottom: 15px;
       }
 
       :host .test-result-rating:not(:first-child) {
@@ -330,68 +369,73 @@
 
       :host .test-result-rating paper-slider {
         margin-top: -10px;
-        --paper-input-container: {
-          width: 50px;
-        }
+      }
+
+      :host .test-result-rating paper-slider /deep/ paper-input,
+      :host .terpene-amount-container paper-slider /deep/ paper-input {
+        min-width: 55px;
       }
 
       :host .test-result-rating iron-label span {
-        margin-left: 15px;
+        line-height: 34px;
       }
 
-      :host .test-result-rating paper-slider {
-        width: 200px;
-      }
-
-      :host .test-result-rating paper-slider /deep/ paper-input {
-        width: 200px;
-      }
-
-      :host .terpene-toggle-option paper-slider /deep/ paper-input {
-        min-width: 80px;
+      :host .test-result-rating iron-label span.unit-label {
+        line-height: 37px;
+        padding-left: 3px;
       }
 
       :host .test-result-terpenes.zerostate paper-checkbox {
         display: block;
         margin: 5px 0;
-        min-width: 130px;
-      }
-
-      :host .test-result-terpenes.zerostate {
-        padding: 10px 25px;
       }
     </style>
 
     <div id="widgetWrap" class="bloombox-testing-content">
       <!-- Zero State UI -->
       <template is="dom-if" if="[[zerostate]]">
-        <div class="test-result-ratings">
+        <div class="test-result-ratings zerostate">
+          <template is="dom-if" if="[[dynamicRatingMode]]">
+          <div class="test-rating-mode">
+            <label id="unitLabel">Unit:</label>
+            <paper-radio-group
+              attr-for-selected="name"
+              selected="{{ratingMode}}"
+              allow-empty-selection="false"
+              aria-labelledby="unitLabel">
+              <paper-radio-button name="mg">mg</paper-radio-button>
+              <paper-radio-button name="%">%</paper-radio-button>
+            </paper-radio-group>
+          </div><!-- end div.test-rating-mode -->
+          </template>
           <div class="test-result-rating">
             <iron-label>
-              <span>THC Rating</span>
+              <span>THC:</span>
               <paper-slider
                 id="thcValue"
                 pin
                 editable
                 value="{{thc}}"
                 class="thc-value test-result-rating-value form-item"
-                secondary-progress="20.0"
-                step="0.1"
-                max="40.0"></paper-slider>
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
             </iron-label>
-          </div>
+          </div><!-- end div.test-result-rating -->
           <div class="test-result-rating">
             <iron-label>
-              <span>CBD Rating</span>
+              <span>CBD:</span>
               <paper-slider
                 id="cbdValue"
                 pin
                 editable
                 value="{{cbd}}"
                 class="cbd-value test-result-rating-value form-item"
-                secondary-progress="10.0"
-                step="0.1"
-                max="30.0"></paper-slider>
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
             </iron-label>
           </div><!-- end div.test-result-rating -->
         </div><!-- end div.test-result-ratings -->
@@ -399,6 +443,7 @@
         <template is="dom-if" if="[[_rich]]">
           <!-- Terpenes -->
           <div class="test-result-terpenes zerostate">
+            <h3>Terpenes</h3>
             <div class="terpene-toggle-option myrcene-toggle-option">
               <div class="myrcene-toggle-container">
                 <paper-checkbox checked="{{terpenes.myrcene.presence}}" class="form-item terpene-result terpene-myrcene" noink>Myrcene</paper-checkbox>
@@ -610,8 +655,8 @@
       <!-- Data UI -->
       <template is="dom-if" if="[[!zerostate]]">
         <div class="bloombox-test-results-display">
-          <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc)]]</span></iron-label>
-          <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd)]]</span></iron-label>
+          <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd, ratingMode)]]</span></iron-label>
 
           <iron-label class="terpene-label myrcene-label" hidden$="[[!terpenes.myrcene.presence]]"><span>MYR</span></iron-label>
           <iron-label class="terpene-label caryopyllene-oxide-label" hidden$="[[!terpenes.caryopylleneOxide.presence]]"><span>CRY-O</span></iron-label>
@@ -650,6 +695,21 @@
         },
 
         /**
+         * Computed object property describing the parameters we should use to
+         * govern `<paper-slider>` ratings, based on the current `ratingMode`.
+         * Things that are provided by this object:
+         * - `limit_hint`: Provides a `secondary-progress` value to hint at the
+         *   generally-sane range for a particular rating type.
+         * - `step`: Provides an amount for the `step` property to govern how
+             much an individual step increments or decrements the value.
+         * - `max`: Provides a maximum value for the rating.
+         */
+        _ratingModeParams: {
+          type: Object,
+          computed: '_computeRatingModeParams(ratingMode)'
+        },
+
+        /**
          * Computed flag that controls whether we should place an overlay over the
          * element with a "Results Pending" message.
          */
@@ -662,6 +722,28 @@
          * Flag indicating that we should be showing a form to edit test results.
          */
         zerostate: {
+          type: Boolean,
+          notify: true,
+          value: false
+        },
+
+        /**
+         * Rating mode setting. Informs the UI of the unit that the rating value
+         * is representing. Options include:
+         * - `%`: The rating value is a percentage.
+         * - `mg`: The rating value is a measurement in milligrams.
+         */
+        ratingMode: {
+          type: String,
+          notify: true,
+          value: 'mg'
+        },
+
+        /**
+         * Computed flag property indicating whether this widget supports dynamic
+         * a rating mode.
+         */
+        dynamicRatingMode: {
           type: Boolean,
           notify: true,
           value: false
@@ -718,6 +800,34 @@
       },
 
       /**
+       * Computed property function that returns whether we should be
+       * showing the dynamic rating mode UI.
+       */
+      _computeDynamicRatingMode: function(ratingMode) {
+        return ratingMode === "dynamic";
+      },
+
+      /**
+       * Computed property function that provides parameters for configuring
+       * `<paper-slider>` ratings based on the current `ratingMode`.
+       */
+      _computeRatingModeParams: function(ratingMode) {
+        if (ratingMode === "%") {
+          return {
+            limit_hint: 20.0,
+            step: 0.1,
+            max: 40.0
+          };
+        } else if (ratingMode === "mg") {
+          return {
+            limit_hint: 200,
+            step: 1,
+            max: 1000
+          };
+        }
+      },
+
+      /**
        * Computed property function that controls whether we should be
        * showing a "Results Pending" overlay.
        */
@@ -754,19 +864,10 @@
 
       /**
        * Render function that decides whether to show results in percentage
-       * or milligram form. Basically, we use a simple process to determine this:
-       * - Is the number over 100? Then it is certainly a `mg` value.
-       * - Is the number an integer? Then it is very likely a `mg` value.
-       * - Otherwise, show the value in `%` form.
-
-       * The above is likely imperfect! @TODO ;)
+       * or milligram form based on the current `ratingMode`.
        */
-      _renderLabel: function(value) {
-        if (value === 0)
-          return "None";
-        if (value > 100 || Number(value) === value && value % 1 === 0)
-          return [value, "mg"].join("");
-        return [value, "%"].join("");
+      _renderLabel: function(value, ratingMode) {
+        return value + ratingMode;
       }
     });
   </script>

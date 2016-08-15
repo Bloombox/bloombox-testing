@@ -10,9 +10,7 @@
     "polymer",
     "bloombox"
   ],
-  "main": [
-    "bloombox-testing.html"
-  ],
+  "main": "bloombox-testing.html",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:bloombox/bloombox-testing.git"
@@ -21,14 +19,15 @@
   "homepage": "https://github.com/bloombox/bloombox-testing",
   "ignore": [],
   "description": "Provides UI for displaying and editing product QA testing results",
-  "main": "bloombox-testing.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.5.0",
     "iron-label": "PolymerElements/iron-label#^1.0.2",
     "paper-slider": "PolymerElements/paper-slider#^1.0.11",
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.2.0",
     "bloombox-product": "git@github.com:bloombox/bloombox-product.git#master",
-    "bloombox-styles": "git@github.com:bloombox/bloombox-styles.git#master"
+    "bloombox-styles": "git@github.com:bloombox/bloombox-styles.git#master",
+    "paper-radio-button": "PolymerElements/paper-radio-button#^1.2.1",
+    "paper-radio-group": "PolymerElements/paper-radio-group#^1.2.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
