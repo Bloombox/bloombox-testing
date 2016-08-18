@@ -73,13 +73,14 @@
         display: flex;
         align-items: center;
         margin-right: 5px;
-        height: 56px;
+        height: 30px;
       }
 
       :host .test-result-terpenes {
         flex: 1 1 50%;
         margin-right: 10%;
         max-height: 200px;
+        min-width: 390px;
         background: #dfdfdf;
         padding: 5px;
         overflow-x: scroll;
@@ -414,7 +415,6 @@
               <span>THC:</span>
               <paper-slider
                 id="thcValue"
-                pin
                 editable
                 value="{{thc}}"
                 class="thc-value test-result-rating-value form-item"
@@ -429,7 +429,6 @@
               <span>CBD:</span>
               <paper-slider
                 id="cbdValue"
-                pin
                 editable
                 value="{{cbd}}"
                 class="cbd-value test-result-rating-value form-item"
@@ -451,7 +450,7 @@
               </div><!-- end .myrcene-toggle-container -->
               <template is="dom-if" if="[[terpenes.myrcene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.myrcene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-myrcene"></paper-slider>
+                  <paper-slider value="{{terpenes.myrcene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-myrcene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -463,7 +462,7 @@
               </div><!-- end .caryophyllene-oxide-toggle-container -->
               <template is="dom-if" if="[[terpenes.caryophylleneOxide.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.caryophylleneOxide.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-caryophyllene-oxide"></paper-slider>
+                  <paper-slider  value="{{terpenes.caryophylleneOxide.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-caryophyllene-oxide"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -475,7 +474,7 @@
               </div><!-- end .linalool-toggle-container -->
               <template is="dom-if" if="[[terpenes.linalool.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.linalool.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-linalool"></paper-slider>
+                  <paper-slider  value="{{terpenes.linalool.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-linalool"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -487,7 +486,7 @@
               </div><!-- end .beta-caryophyllene-toggle-container -->
               <template is="dom-if" if="[[terpenes.betaCaryophyllene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.betaCaryophyllene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-caryophyllene"></paper-slider>
+                  <paper-slider  value="{{terpenes.betaCaryophyllene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-caryophyllene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -499,7 +498,7 @@
               </div><!-- end .alpha-humulene-toggle-container -->
               <template is="dom-if" if="[[terpenes.alphaHumulene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.alphaHumulene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-humulene"></paper-slider>
+                  <paper-slider  value="{{terpenes.alphaHumulene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-humulene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -511,7 +510,7 @@
               </div><!-- end .alpha-terpineol-toggle-container -->
               <template is="dom-if" if="[[terpenes.alphaTerpineol.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.alphaTerpineol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpineol"></paper-slider>
+                  <paper-slider value="{{terpenes.alphaTerpineol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpineol"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -523,7 +522,7 @@
               </div><!-- end .camphene-toggle-container -->
               <template is="dom-if" if="[[terpenes.camphene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{camphene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-camphene"></paper-slider>
+                  <paper-slider value="{{camphene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-camphene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -535,7 +534,7 @@
               </div><!-- end .fenchol-toggle-container -->
               <template is="dom-if" if="[[terpenes.fenchol.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.fenchol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-fenchol"></paper-slider>
+                  <paper-slider value="{{terpenes.fenchol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-fenchol"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -547,7 +546,7 @@
               </div><!-- end .alpha-pinene-toggle-container -->
               <template is="dom-if" if="[[terpenes.alphaPinene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.alphaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-pinene"></paper-slider>
+                  <paper-slider value="{{terpenes.alphaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-pinene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -559,7 +558,7 @@
               </div><!-- end .beta-pinene-toggle-container -->
               <template is="dom-if" if="[[terpenes.betaPinene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.betaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-pinene"></paper-slider>
+                  <paper-slider value="{{terpenes.betaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-pinene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -571,7 +570,7 @@
               </div><!-- end .alpha-terpinine-toggle-container -->
               <template is="dom-if" if="[[terpenes.alphaTerpinine.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.alphaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpinine"></paper-slider>
+                  <paper-slider value="{{terpenes.alphaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpinine"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -583,7 +582,7 @@
               </div><!-- end .gamma-terpinine-toggle-container -->
               <template is="dom-if" if="[[terpenes.gammaTerpinine.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.gammaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-gamma-terpinine"></paper-slider>
+                  <paper-slider value="{{terpenes.gammaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-gamma-terpinine"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -595,7 +594,7 @@
               </div><!-- end .limonene-toggle-container -->
               <template is="dom-if" if="[[terpenes.limonene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.limonene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-limonene"></paper-slider>
+                  <paper-slider value="{{terpenes.limonene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-limonene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -607,7 +606,7 @@
               </div><!-- end .carene-toggle-container -->
               <template is="dom-if" if="[[terpenes.carene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.carene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-carene"></paper-slider>
+                  <paper-slider value="{{terpenes.carene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-carene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -619,7 +618,7 @@
               </div><!-- end .beta-ocimene-toggle-container -->
               <template is="dom-if" if="[[terpenes.betaOcimene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.betaOcimene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-ocimene"></paper-slider>
+                  <paper-slider value="{{terpenes.betaOcimene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-ocimene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -631,7 +630,7 @@
               </div><!-- end .alpha-phellandrene-toggle-container -->
               <template is="dom-if" if="[[terpenes.alphaPhellandrene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.alphaPhellandrene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-phellandrene"></paper-slider>
+                  <paper-slider value="{{terpenes.alphaPhellandrene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-phellandrene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>
@@ -643,7 +642,7 @@
               </div><!-- end .terpinolene-toggle-container -->
               <template is="dom-if" if="[[terpenes.terpinolene.presence]]">
                 <div class="terpene-amount-container">
-                  <paper-slider pin value="{{terpenes.terpinolene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
+                  <paper-slider value="{{terpenes.terpinolene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
                 <div class="terpene-percentage-label">%</div>
               </template>

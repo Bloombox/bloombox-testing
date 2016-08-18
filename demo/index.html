@@ -19,9 +19,17 @@
       div.centered.graybg demo-snippet bloombox-testing {
         --no-tests-overlay-background: #DDD;
       }
+
+      demo-snippet {
+        min-width: 700px;
+      }
+
+      .vertical-section-container.centered {
+        max-width: 700px;
+      }
     </style>
   </head>
-  <body>
+  <body unresolved>
     <div class="vertical-section-container centered">
       <h3>Basic Zerostate Demo</h3>
       <demo-snippet>
@@ -35,7 +43,7 @@
       <h3>Rich Zerostate Demo (flowers)</h3>
       <demo-snippet>
         <template>
-          <bloombox-testing mode="rich" zerostate></bloombox-testing>
+          <bloombox-testing mode="rich" rating-mode="%" zerostate></bloombox-testing>
         </template>
       </demo-snippet>
     </div>
