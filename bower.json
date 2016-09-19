@@ -27,7 +27,7 @@
     "bloombox-product": "git@github.com:bloombox/bloombox-product.git#master",
     "bloombox-styles": "git@github.com:bloombox/bloombox-styles.git#master",
     "paper-radio-button": "PolymerElements/paper-radio-button#^1.2.1",
-    "paper-radio-group": "PolymerElements/paper-radio-group#^1.2.0"
+    "paper-radio-group": "momentum/paper-radio-group#master"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
