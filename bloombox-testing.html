@@ -867,6 +867,8 @@
        * or milligram form based on the current `ratingMode`.
        */
       _renderLabel: function(value, ratingMode) {
+        if (value == null || value == undefined)
+          return "?";
         return value + ratingMode;
       }
     });
