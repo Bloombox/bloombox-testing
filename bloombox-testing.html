@@ -21,7 +21,7 @@
 
 
 <dom-module id="bloombox-testing">
-  <template>
+  <template strip-whitespace>
     <style is="custom-style" include="bloombox-styles">
       :host {
         display: inline-block;
@@ -395,9 +395,9 @@
 
     <div id="widgetWrap" class="bloombox-testing-content">
       <!-- Zero State UI -->
-      <template is="dom-if" if="[[zerostate]]">
+      <template is="dom-if" if="[[zerostate]]" strip-whitespace>
         <div class="test-result-ratings zerostate">
-          <template is="dom-if" if="[[dynamicRatingMode]]">
+          <template is="dom-if" if="[[dynamicRatingMode]]" strip-whitespace>
           <div class="test-rating-mode">
             <label id="unitLabel">Unit:</label>
             <paper-radio-group
@@ -440,7 +440,7 @@
           </div><!-- end div.test-result-rating -->
         </div><!-- end div.test-result-ratings -->
 
-        <template is="dom-if" if="[[_rich]]">
+        <template is="dom-if" if="[[_rich]]" strip-whitespace>
           <!-- Terpenes -->
           <div class="test-result-terpenes zerostate">
             <h3>Terpenes</h3>
@@ -448,7 +448,7 @@
               <div class="myrcene-toggle-container">
                 <paper-checkbox checked="{{terpenes.myrcene.presence}}" class="form-item terpene-result terpene-myrcene" noink>Myrcene</paper-checkbox>
               </div><!-- end .myrcene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.myrcene.presence]]">
+              <template is="dom-if" if="[[terpenes.myrcene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.myrcene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-myrcene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -460,7 +460,7 @@
               <div class="caryophyllene-oxide-toggle-container">
                 <paper-checkbox checked="{{terpenes.caryophylleneOxide.presence}}" class="form-item terpene-result terpene-caryophyllene-oxide" noink>Caryophyllene oxide</paper-checkbox>
               </div><!-- end .caryophyllene-oxide-toggle-container -->
-              <template is="dom-if" if="[[terpenes.caryophylleneOxide.presence]]">
+              <template is="dom-if" if="[[terpenes.caryophylleneOxide.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider  value="{{terpenes.caryophylleneOxide.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-caryophyllene-oxide"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -472,7 +472,7 @@
               <div class="linalool-toggle-container">
                 <paper-checkbox checked="{{terpenes.linalool.presence}}" class="form-item terpene-result terpene-linalool" noink>Linalool</paper-checkbox>
               </div><!-- end .linalool-toggle-container -->
-              <template is="dom-if" if="[[terpenes.linalool.presence]]">
+              <template is="dom-if" if="[[terpenes.linalool.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider  value="{{terpenes.linalool.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-linalool"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -484,7 +484,7 @@
               <div class="beta-caryophyllene-toggle-container">
                 <paper-checkbox checked="{{terpenes.betaCaryophyllene.presence}}" class="form-item terpene-result terpene-beta-caryophyllene" noink>β-Caryophyllene</paper-checkbox>
               </div><!-- end .beta-caryophyllene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.betaCaryophyllene.presence]]">
+              <template is="dom-if" if="[[terpenes.betaCaryophyllene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider  value="{{terpenes.betaCaryophyllene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-caryophyllene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -496,7 +496,7 @@
               <div class="alpha-humulene-toggle-container">
                 <paper-checkbox checked="{{terpenes.alphaHumulene.presence}}" class="form-item terpene-result terpene-alpha-humulene" noink>α-Humulene</paper-checkbox>
               </div><!-- end .alpha-humulene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.alphaHumulene.presence]]">
+              <template is="dom-if" if="[[terpenes.alphaHumulene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider  value="{{terpenes.alphaHumulene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-humulene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -508,7 +508,7 @@
               <div class="alpha-terpineol-toggle-container">
                 <paper-checkbox checked="{{terpenes.alphaTerpineol.presence}}" class="form-item terpene-result terpene-alpha-terpineol" noink>α-Terpineol</paper-checkbox>
               </div><!-- end .alpha-terpineol-toggle-container -->
-              <template is="dom-if" if="[[terpenes.alphaTerpineol.presence]]">
+              <template is="dom-if" if="[[terpenes.alphaTerpineol.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.alphaTerpineol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpineol"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -520,7 +520,7 @@
               <div class="camphene-toggle-container">
                 <paper-checkbox checked="{{terpenes.camphene.presence}}" class="form-item terpene-result terpene-camphene" noink>Camphene</paper-checkbox>
               </div><!-- end .camphene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.camphene.presence]]">
+              <template is="dom-if" if="[[terpenes.camphene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{camphene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-camphene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -532,7 +532,7 @@
               <div class="fenchol-toggle-container">
                 <paper-checkbox checked="{{terpenes.fenchol.presence}}" class="form-item terpene-result terpene-fenchol" noink>Fenchol</paper-checkbox>
               </div><!-- end .fenchol-toggle-container -->
-              <template is="dom-if" if="[[terpenes.fenchol.presence]]">
+              <template is="dom-if" if="[[terpenes.fenchol.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.fenchol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-fenchol"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -544,7 +544,7 @@
               <div class="alpha-pinene-toggle-container">
                 <paper-checkbox checked="{{terpenes.alphaPinene.presence}}" class="form-item terpene-result terpene-alpha-pinene" noink>α-Pinene</paper-checkbox>
               </div><!-- end .alpha-pinene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.alphaPinene.presence]]">
+              <template is="dom-if" if="[[terpenes.alphaPinene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.alphaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-pinene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -556,7 +556,7 @@
               <div class="beta-pinene-toggle-container">
                 <paper-checkbox checked="{{terpenes.betaPinene.presence}}" class="form-item terpene-result terpene-beta-pinene" noink>β-Pinene</paper-checkbox>
               </div><!-- end .beta-pinene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.betaPinene.presence]]">
+              <template is="dom-if" if="[[terpenes.betaPinene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.betaPinene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-pinene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -568,7 +568,7 @@
               <div class="alpha-terpinine-toggle-container">
                 <paper-checkbox checked="{{terpenes.alphaTerpinine.presence}}" class="form-item terpene-result terpene-alpha-terpinine" noink>α-Terpinine</paper-checkbox>
               </div><!-- end .alpha-terpinine-toggle-container -->
-              <template is="dom-if" if="[[terpenes.alphaTerpinine.presence]]">
+              <template is="dom-if" if="[[terpenes.alphaTerpinine.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.alphaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-terpinine"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -580,7 +580,7 @@
               <div class="gamma-terpinine-toggle-container">
                 <paper-checkbox checked="{{terpenes.gammaTerpinine.presence}}" class="form-item terpene-result terpene-gamma-terpinine" noink>γ-Terpinine</paper-checkbox>
               </div><!-- end .gamma-terpinine-toggle-container -->
-              <template is="dom-if" if="[[terpenes.gammaTerpinine.presence]]">
+              <template is="dom-if" if="[[terpenes.gammaTerpinine.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.gammaTerpinine.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-gamma-terpinine"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -592,7 +592,7 @@
               <div class="limonene-toggle-container">
                 <paper-checkbox checked="{{terpenes.limonene.presence}}" class="form-item terpene-result terpene-limonene" noink>Limonene</paper-checkbox>
               </div><!-- end .limonene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.limonene.presence]]">
+              <template is="dom-if" if="[[terpenes.limonene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.limonene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-limonene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -604,7 +604,7 @@
               <div class="carene-toggle-container">
                 <paper-checkbox checked="{{terpenes.carene.presence}}" class="form-item terpene-result terpene-carene" noink>Carene</paper-checkbox>
               </div><!-- end .carene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.carene.presence]]">
+              <template is="dom-if" if="[[terpenes.carene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.carene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-carene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -616,7 +616,7 @@
               <div class="beta-ocimene-toggle-container">
                 <paper-checkbox checked="{{terpenes.betaOcimene.presence}}" class="form-item terpene-result terpene-beta-ocimene" noink>β-Ocimene</paper-checkbox>
               </div><!-- end .beta-ocimene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.betaOcimene.presence]]">
+              <template is="dom-if" if="[[terpenes.betaOcimene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.betaOcimene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-beta-ocimene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -628,7 +628,7 @@
               <div class="alpha-phellandrene-toggle-container">
                 <paper-checkbox checked="{{terpenes.alphaPhellandrene.presence}}" class="form-item terpene-result terpene-alpha-phellandrene" noink>α-Phellandrene</paper-checkbox>
               </div><!-- end .alpha-phellandrene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.alphaPhellandrene.presence]]">
+              <template is="dom-if" if="[[terpenes.alphaPhellandrene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.alphaPhellandrene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-phellandrene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -640,7 +640,7 @@
               <div class="terpinolene-toggle-container">
                 <paper-checkbox checked="{{terpenes.terpinolene.presence}}" class="form-item terpene-result terpene-terpinolene" noink>Terpinolene</paper-checkbox>
               </div><!-- end .terpinolene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.terpinolene.presence]]">
+              <template is="dom-if" if="[[terpenes.terpinolene.presence]]" strip-whitespace>
                 <div class="terpene-amount-container">
                   <paper-slider value="{{terpenes.terpinolene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
                 </div><!-- end .terpene-amount-container -->
@@ -653,7 +653,7 @@
       </template>
 
       <!-- Data UI -->
-      <template is="dom-if" if="[[!zerostate]]">
+      <template is="dom-if" if="[[!zerostate]]" strip-whitespace restamp>
         <div class="bloombox-test-results-display">
           <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc, ratingMode)]]</span></iron-label>
           <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd, ratingMode)]]</span></iron-label>
