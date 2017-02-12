@@ -1,6 +1,6 @@
 
 #
-# - Bloombox - bloombox-user
+# - Bloombox - bloombox-testing
 #
 
 BUILDBOT ?= 0
@@ -10,7 +10,7 @@ CREDENTIALS ?= 1
 VERSION ?= 0.0.2
 
 all: build
-	@echo "bloombox-user is ready."
+	@echo "bloombox-testing is ready."
 
 
 #
@@ -24,10 +24,10 @@ build: $(TARGET) $(ENV) dependencies
 
 ifeq ($(BUILDBOT),yes)
 test:
-	wct --job-name "bloombox-user" --expanded --build-number "$(BUILD_NUMBER)" --sauce-tunnel-id "$(SAUCE_TUNNEL)" --plugin wct-jenkins
+	wct --job-name "bloombox-testing" --expanded --build-number "$(BUILD_NUMBER)" --sauce-tunnel-id "$(SAUCE_TUNNEL)" --plugin wct-jenkins
 else
 test:
-	@wct --job-name "bloombox-user"
+	@wct --job-name "bloombox-testing"
 endif
 
 quickbuild:
