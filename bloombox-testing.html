@@ -308,6 +308,21 @@
         --paper-slider-pin-color: var(--testing-carene-color, #d6616b);
       }  
 
+      /*  alpha-ocimene styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-ocimene-label {
+        background: var(--testing-alpha-ocimene-color, #e7969c);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-ocimene {
+        --paper-checkbox-checked-color: var(--testing-alpha-ocimene-color, #e7969c);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-ocimene-color, #e7969c);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-ocimene-color, #e7969c);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-beta-ocimene {
+        --paper-slider-active-color: var(--testing-beta-ocimene-color, #e7969c);
+        --paper-slider-knob-color: var(--testing-beta-ocimene-color, #e7969c);
+        --paper-slider-pin-color: var(--testing-beta-ocimene-color, #e7969c);
+      } 
+
       /*  beta-ocimene styling  */
       :host .bloombox-test-results-display .terpene-label.beta-ocimene-label {
         background: var(--testing-beta-ocimene-color, #e7969c);  
@@ -352,6 +367,21 @@
         --paper-slider-knob-color: var(--testing-terpinolene-color, #ce6dbd);
         --paper-slider-pin-color: var(--testing-terpinolene-color, #ce6dbd);
       }  
+
+      /*  eucalyptol styling  */
+      :host .bloombox-test-results-display .terpene-label.eucalyptol-label {
+        background: var(--testing-eucalyptol-color, #e7969c);  
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-eucalyptol {
+        --paper-checkbox-checked-color: var(--testing-eucalyptol-color, #e7969c);
+        --paper-checkbox-checked-ink-color: var(--testing-eucalyptol-color, #e7969c);
+        --paper-checkbox-unchecked-ink-color: var(--testing-eucalyptol-color, #e7969c);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-eucalyptol {
+        --paper-slider-active-color: var(--testing-eucalyptol-color, #e7969c);
+        --paper-slider-knob-color: var(--testing-eucalyptol-color, #e7969c);
+        --paper-slider-pin-color: var(--testing-eucalyptol-color, #e7969c);
+      } 
 
       :host .test-result-ratings {
         flex: 1 1 30%;
@@ -432,6 +462,104 @@
                 editable
                 value="{{cbd}}"
                 class="cbd-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+                    <div class="test-result-rating">
+            <iron-label>
+              <span>THCa:</span>
+              <paper-slider
+                id="thcaValue"
+                editable
+                value="{{thca}}"
+                class="thca-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBDa:</span>
+              <paper-slider
+                id="cbdaValue"
+                editable
+                value="{{cbda}}"
+                class="cbda-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBGa:</span>
+              <paper-slider
+                id="cbgaValue"
+                editable
+                value="{{cbga}}"
+                class="cbga-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBC:</span>
+              <paper-slider
+                id="cbcValue"
+                editable
+                value="{{cbc}}"
+                class="cbc-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBDVa:</span>
+              <paper-slider
+                id="cbdvaValue"
+                editable
+                value="{{cbdva}}"
+                class="cbdva-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBG:</span>
+              <paper-slider
+                id="cbgValue"
+                editable
+                value="{{cbg}}"
+                class="cbg-value test-result-rating-value form-item"
+                secondary-progress="[[_ratingModeParams.limit_hint]]"
+                step="[[_ratingModeParams.step]]"
+                max="[[_ratingModeParams.max]]"></paper-slider>
+              <span class="unit-label">[[ratingMode]]</span>
+            </iron-label>
+          </div><!-- end div.test-result-rating -->
+          <div class="test-result-rating">
+            <iron-label>
+              <span>CBN:</span>
+              <paper-slider
+                id="cbnValue"
+                editable
+                value="{{cbn}}"
+                class="cbn-value test-result-rating-value form-item"
                 secondary-progress="[[_ratingModeParams.limit_hint]]"
                 step="[[_ratingModeParams.step]]"
                 max="[[_ratingModeParams.max]]"></paper-slider>
@@ -612,6 +740,18 @@
               </template>
             </div><!-- end .carene-toggle-option -->
 
+            <div class="terpene-toggle-option alpha-ocimene-toggle-option">
+              <div class="alpha-ocimene-toggle-container">
+                <paper-checkbox checked="{{terpenes.alphaOcimene.presence}}" class="form-item terpene-result terpene-alpha-ocimene" noink>α-Ocimene</paper-checkbox>
+              </div><!-- end .alpha-ocimene-toggle-container -->
+              <template is="dom-if" if="[[terpenes.alphaOcimene.presence]]">
+                <div class="terpene-amount-container">
+                  <paper-slider value="{{terpenes.alphaOcimene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-alpha-ocimene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .alpha-ocimene-toggle-option -->
+
             <div class="terpene-toggle-option beta-ocimene-toggle-option">
               <div class="beta-ocimene-toggle-container">
                 <paper-checkbox checked="{{terpenes.betaOcimene.presence}}" class="form-item terpene-result terpene-beta-ocimene" noink>β-Ocimene</paper-checkbox>
@@ -648,6 +788,18 @@
               </template>
             </div><!-- end .terpinolene-toggle-option -->
 
+            <div class="terpene-toggle-option eucalyptol-toggle-option">
+              <div class="eucalyptol-toggle-container">
+                <paper-checkbox checked="{{terpenes.eucalyptol.presence}}" class="form-item terpene-result terpene-eucalyptol" noink>Eucalyptol</paper-checkbox>
+              </div><!-- end .eucalyptol-toggle-container -->
+              <template is="dom-if" if="[[terpenes.terpinolene.presence]]">
+                <div class="terpene-amount-container">
+                  <paper-slider value="{{terpenes.eucalyptol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-eucalyptol"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .eucalyptol-toggle-option -->
+
           </div><!-- end .test-result-terpenes -->
         </template>
       </template>
@@ -672,9 +824,11 @@
           <iron-label class="terpene-label gamma-terpinine-label" hidden$="[[!terpenes.gammaTerpinine.presence]]"><span>γ-TPN</span></iron-label>
           <iron-label class="terpene-label limonene-label" hidden$="[[!terpenes.limonene.presence]]"><span>LMN</span></iron-label>
           <iron-label class="terpene-label carene-label" hidden$="[[!terpenes.carene.presence]]"><span>CRN</span></iron-label>
+          <iron-label class="terpene-label alpha-ocimene-label" hidden$="[[!terpenes.alphaOcimene.presence]]"><span>α-OCI</span></iron-label>
           <iron-label class="terpene-label beta-ocimene-label" hidden$="[[!terpenes.betaOcimene.presence]]"><span>β-OCI</span></iron-label>
           <iron-label class="terpene-label alpha-phellandrene-label" hidden$="[[!terpenes.alphaPhellandrene.presence]]"><span>α-PHL</span></iron-label>
           <iron-label class="terpene-label terpinolene-label" hidden$="[[!terpenes.terpinolene.presence]]"><span>TPO</span></iron-label>
+          <iron-label class="terpene-label eucalyptol-label" hidden$="[[!terpenes.eucalyptol.presence]]"><span>EUC</span></iron-label>
         </div><!-- end .bloombox-test-results-display -->
       </template>
     </template>
@@ -773,6 +927,69 @@
          * THC value detected/indicated by the tests.
          */
         thc: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * THCa value detected/indicated by the tests.
+         */
+        thca: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBDa value detected/indicated by the tests.
+         */
+        cbda: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBN value detected/indicated by the tests.
+         */
+        cbn: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBC value detected/indicated by the tests.
+         */
+        cbc: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBG value detected/indicated by the tests.
+         */
+        cbg: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBDVa value detected/indicated by the tests.
+         */
+        cbdva: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBGa value detected/indicated by the tests.
+         */
+        cbga: {
           type: Number,
           notify: true,
           value: 0
