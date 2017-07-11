@@ -317,10 +317,10 @@
         --paper-checkbox-checked-ink-color: var(--testing-alpha-ocimene-color, #e7969c);
         --paper-checkbox-unchecked-ink-color: var(--testing-alpha-ocimene-color, #e7969c);
       }
-      :host .test-result-terpenes.zerostate paper-slider.terpene-beta-ocimene {
-        --paper-slider-active-color: var(--testing-beta-ocimene-color, #e7969c);
-        --paper-slider-knob-color: var(--testing-beta-ocimene-color, #e7969c);
-        --paper-slider-pin-color: var(--testing-beta-ocimene-color, #e7969c);
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-ocimene {
+        --paper-slider-active-color: var(--testing-alpha-ocimene-color, #e7969c);
+        --paper-slider-knob-color: var(--testing-alpha-ocimene-color, #e7969c);
+        --paper-slider-pin-color: var(--testing-alpha-ocimene-color, #e7969c);
       } 
 
       /*  beta-ocimene styling  */
@@ -832,11 +832,21 @@
         </template>
       </template>
 
+
       <!-- Data UI -->
       <template is="dom-if" if="[[!zerostate]]" strip-whitespace restamp>
         <div class="bloombox-test-results-display">
           <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label thca-label"><span>THCa: [[_renderLabel(thca, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label thcv-label"><span>THCV: [[_renderLabel(thcv, ratingMode)]]</span></iron-label>
           <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbda-label"><span>CBDa: [[_renderLabel(cbda, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbc-label"><span>CBC: [[_renderLabel(cbc, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbv-label"><span>CBV: [[_renderLabel(cbv, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbva-label"><span>CBVA: [[_renderLabel(cbva, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbg-label"><span>CBG: [[_renderLabel(cbg, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbga-label"><span>CBGa: [[_renderLabel(cbga, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbn-label"><span>CBN: [[_renderLabel(cbn, ratingMode)]]</span></iron-label>
 
           <iron-label class="terpene-label myrcene-label" hidden$="[[!terpenes.myrcene.presence]]"><span>MYR</span></iron-label>
           <iron-label class="terpene-label caryopyllene-oxide-label" hidden$="[[!terpenes.caryopylleneOxide.presence]]"><span>CRY-O</span></iron-label>
