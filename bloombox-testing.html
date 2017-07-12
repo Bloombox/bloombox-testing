@@ -218,19 +218,34 @@
         --paper-slider-pin-color: var(--testing-fenchol-color, #cedb9c);
       }
 
+      /*  alpha-pinene styling  */
+      :host .bloombox-test-results-display .terpene-label.alpha-pinene-label {
+        background: var(--testing-alpha-pinene-color, #8BC34A);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-pinene {
+        --paper-checkbox-checked-color: var(--testing-alpha-pinene-color, #8BC34A);
+        --paper-checkbox-checked-ink-color: var(--testing-alpha-pinene-color, #8BC34A);
+        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-pinene-color, #8BC34A);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-pinene {
+        --paper-slider-active-color: var(--testing-alpha-pinene-color, #8BC34A);
+        --paper-slider-knob-color: var(--testing-alpha-pinene-color, #8BC34A);
+        --paper-slider-pin-color: var(--testing-alpha-pinene-color, #8BC34A);
+      }
+
       /*  beta-pinene styling  */
       :host .bloombox-test-results-display .terpene-label.beta-pinene-label {
-        background: var(--testing-beta-pinene-color, #bd9e39);  
+        background: var(--testing-beta-pinene-color, #689F38);
       }
       :host .test-result-terpenes.zerostate paper-checkbox.terpene-beta-pinene {
-        --paper-checkbox-checked-color: var(--testing-beta-pinene-color, #bd9e39);
-        --paper-checkbox-checked-ink-color: var(--testing-beta-pinene-color, #bd9e39);
-        --paper-checkbox-unchecked-ink-color: var(--testing-beta-pinene-color, #bd9e39);
+        --paper-checkbox-checked-color: var(--testing-beta-pinene-color, #689F38);
+        --paper-checkbox-checked-ink-color: var(--testing-beta-pinene-color, #689F38);
+        --paper-checkbox-unchecked-ink-color: var(--testing-beta-pinene-color, #689F38);
       }
       :host .test-result-terpenes.zerostate paper-slider.terpene-beta-pinene {
-        --paper-slider-active-color: var(--testing-beta-pinene-color, #bd9e39);
-        --paper-slider-knob-color: var(--testing-beta-pinene-color, #bd9e39);
-        --paper-slider-pin-color: var(--testing-beta-pinene-color, #bd9e39);
+        --paper-slider-active-color: var(--testing-beta-pinene-color, #689F38);
+        --paper-slider-knob-color: var(--testing-beta-pinene-color, #689F38);
+        --paper-slider-pin-color: var(--testing-beta-pinene-color, #689F38);
       }  
 
       /*  alpha-terpinine styling  */
@@ -248,20 +263,35 @@
         --paper-slider-pin-color: var(--testing-alpha-terpinine-color, #e7ba52);
       }
 
-      /*  alpha-pinene styling  */
-      :host .bloombox-test-results-display .terpene-label.alpha-pinene-label {
-        background: var(--testing-alpha-pinene-color, #8c6d31);  
+      /*  terpinolene styling  */
+      :host .bloombox-test-results-display .terpene-label.terpinolene-label {
+        background: var(--testing-terpinolene-color, #ce6dbd);  
       }
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-alpha-pinene {
-        --paper-checkbox-checked-color: var(--testing-alpha-pinene-color, #8c6d31);
-        --paper-checkbox-checked-ink-color: var(--testing-alpha-pinene-color, #8c6d31);
-        --paper-checkbox-unchecked-ink-color: var(--testing-alpha-pinene-color, #8c6d31);
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-terpinolene {
+        --paper-checkbox-checked-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-checkbox-checked-ink-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-checkbox-unchecked-ink-color: var(--testing-terpinolene-color, #ce6dbd);
       }
-      :host .test-result-terpenes.zerostate paper-slider.terpene-alpha-pinene {
-        --paper-slider-active-color: var(--testing-alpha-pinene-color, #8c6d31);
-        --paper-slider-knob-color: var(--testing-alpha-pinene-color, #8c6d31);
-        --paper-slider-pin-color: var(--testing-alpha-pinene-color, #8c6d31);
+      :host .test-result-terpenes.zerostate paper-slider.terpene-terpinolene {
+        --paper-slider-active-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-slider-knob-color: var(--testing-terpinolene-color, #ce6dbd);
+        --paper-slider-pin-color: var(--testing-terpinolene-color, #ce6dbd);
       }  
+
+      /*  eucalyptol styling  */
+      :host .bloombox-test-results-display .terpene-label.eucalyptol-label {
+        background: var(--testing-eucalyptol-color, #689F38);
+      }
+      :host .test-result-terpenes.zerostate paper-checkbox.terpene-eucalyptol {
+        --paper-checkbox-checked-color: var(--testing-eucalyptol-color, #689F38);
+        --paper-checkbox-checked-ink-color: var(--testing-eucalyptol-color, #689F38);
+        --paper-checkbox-unchecked-ink-color: var(--testing-eucalyptol-color, #689F38);
+      }
+      :host .test-result-terpenes.zerostate paper-slider.terpene-eucalyptol {
+        --paper-slider-active-color: var(--testing-eucalyptol-color, #689F38);
+        --paper-slider-knob-color: var(--testing-eucalyptol-color, #689F38);
+        --paper-slider-pin-color: var(--testing-eucalyptol-color, #689F38);
+      }
 
       /*  gamma-terpinine styling  */
       :host .bloombox-test-results-display .terpene-label.gamma-terpinine-label {
@@ -352,36 +382,6 @@
         --paper-slider-knob-color: var(--testing-alpha-phellandrene-color, #a55194);
         --paper-slider-pin-color: var(--testing-alpha-phellandrene-color, #a55194);
       }  
-
-      /*  terpinolene styling  */
-      :host .bloombox-test-results-display .terpene-label.terpinolene-label {
-        background: var(--testing-terpinolene-color, #ce6dbd);  
-      }
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-terpinolene {
-        --paper-checkbox-checked-color: var(--testing-terpinolene-color, #ce6dbd);
-        --paper-checkbox-checked-ink-color: var(--testing-terpinolene-color, #ce6dbd);
-        --paper-checkbox-unchecked-ink-color: var(--testing-terpinolene-color, #ce6dbd);
-      }
-      :host .test-result-terpenes.zerostate paper-slider.terpene-terpinolene {
-        --paper-slider-active-color: var(--testing-terpinolene-color, #ce6dbd);
-        --paper-slider-knob-color: var(--testing-terpinolene-color, #ce6dbd);
-        --paper-slider-pin-color: var(--testing-terpinolene-color, #ce6dbd);
-      }  
-
-      /*  eucalyptol styling  */
-      :host .bloombox-test-results-display .terpene-label.eucalyptol-label {
-        background: var(--testing-eucalyptol-color, #e7969c);  
-      }
-      :host .test-result-terpenes.zerostate paper-checkbox.terpene-eucalyptol {
-        --paper-checkbox-checked-color: var(--testing-eucalyptol-color, #e7969c);
-        --paper-checkbox-checked-ink-color: var(--testing-eucalyptol-color, #e7969c);
-        --paper-checkbox-unchecked-ink-color: var(--testing-eucalyptol-color, #e7969c);
-      }
-      :host .test-result-terpenes.zerostate paper-slider.terpene-eucalyptol {
-        --paper-slider-active-color: var(--testing-eucalyptol-color, #e7969c);
-        --paper-slider-knob-color: var(--testing-eucalyptol-color, #e7969c);
-        --paper-slider-pin-color: var(--testing-eucalyptol-color, #e7969c);
-      } 
 
       :host .test-result-ratings {
         flex: 1 1 30%;
@@ -720,6 +720,30 @@
               </template>
             </div><!-- end .beta-pinene-toggle-option -->
 
+            <div class="terpene-toggle-option eucalyptol-toggle-option">
+              <div class="eucalyptol-toggle-container">
+                <paper-checkbox checked="{{terpenes.eucalyptol.presence}}" class="form-item terpene-result terpene-eucalyptol" noink>Eucalyptol</paper-checkbox>
+              </div><!-- end .eucalyptol-toggle-container -->
+              <template is="dom-if" if="[[terpenes.eucalyptol.presence]]">
+                <div class="terpene-amount-container">
+                  <paper-slider value="{{terpenes.eucalyptol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-eucalyptol"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .eucalyptol-toggle-option -->
+
+            <div class="terpene-toggle-option terpinolene-toggle-option">
+              <div class="terpinolene-toggle-container">
+                <paper-checkbox checked="{{terpenes.terpinolene.presence}}" class="form-item terpene-result terpene-terpinolene" noink>Terpinolene</paper-checkbox>
+              </div><!-- end .terpinolene-toggle-container -->
+              <template is="dom-if" if="[[terpenes.terpinolene.presence]]" strip-whitespace>
+                <div class="terpene-amount-container">
+                  <paper-slider value="{{terpenes.terpinolene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
+                </div><!-- end .terpene-amount-container -->
+                <div class="terpene-percentage-label">%</div>
+              </template>
+            </div><!-- end .terpinolene-toggle-option -->
+
             <div class="terpene-toggle-option alpha-terpinine-toggle-option">
               <div class="alpha-terpinine-toggle-container">
                 <paper-checkbox checked="{{terpenes.alphaTerpinine.presence}}" class="form-item terpene-result terpene-alpha-terpinine" noink>α-Terpinine</paper-checkbox>
@@ -803,31 +827,6 @@
                 <div class="terpene-percentage-label">%</div>
               </template>
             </div><!-- end .alpha-phellandrene-toggle-option -->
-
-            <div class="terpene-toggle-option terpinolene-toggle-option">
-              <div class="terpinolene-toggle-container">
-                <paper-checkbox checked="{{terpenes.terpinolene.presence}}" class="form-item terpene-result terpene-terpinolene" noink>Terpinolene</paper-checkbox>
-              </div><!-- end .terpinolene-toggle-container -->
-              <template is="dom-if" if="[[terpenes.terpinolene.presence]]" strip-whitespace>
-                <div class="terpene-amount-container">
-                  <paper-slider value="{{terpenes.terpinolene.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-terpinolene"></paper-slider>
-                </div><!-- end .terpene-amount-container -->
-                <div class="terpene-percentage-label">%</div>
-              </template>
-            </div><!-- end .terpinolene-toggle-option -->
-
-            <div class="terpene-toggle-option eucalyptol-toggle-option">
-              <div class="eucalyptol-toggle-container">
-                <paper-checkbox checked="{{terpenes.eucalyptol.presence}}" class="form-item terpene-result terpene-eucalyptol" noink>Eucalyptol</paper-checkbox>
-              </div><!-- end .eucalyptol-toggle-container -->
-              <template is="dom-if" if="[[terpenes.terpinolene.presence]]">
-                <div class="terpene-amount-container">
-                  <paper-slider value="{{terpenes.eucalyptol.rating}}" max="3.0" min=".01" editable step=".01" class="form-item terpene-eucalyptol"></paper-slider>
-                </div><!-- end .terpene-amount-container -->
-                <div class="terpene-percentage-label">%</div>
-              </template>
-            </div><!-- end .eucalyptol-toggle-option -->
-
           </div><!-- end .test-result-terpenes -->
         </template>
       </template>
@@ -837,16 +836,16 @@
       <template is="dom-if" if="[[!zerostate]]" strip-whitespace restamp>
         <div class="bloombox-test-results-display">
           <iron-label class="rating-label thc-label"><span>THC: [[_renderLabel(thc, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label thca-label"><span>THCa: [[_renderLabel(thca, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label thcv-label"><span>THCV: [[_renderLabel(thcv, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label thca-label" hidden$="[[_checkCannabinoid('thca', thca)]]"><span>THCa: [[_renderLabel(thca, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label thcv-label" hidden$="[[_checkCannabinoid('thcv', thcv)]]"><span>THCV: [[_renderLabel(thcv, ratingMode)]]</span></iron-label>
           <iron-label class="rating-label cbd-label"><span>CBD: [[_renderLabel(cbd, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbda-label"><span>CBDa: [[_renderLabel(cbda, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbc-label"><span>CBC: [[_renderLabel(cbc, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbv-label"><span>CBV: [[_renderLabel(cbv, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbva-label"><span>CBVA: [[_renderLabel(cbva, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbg-label"><span>CBG: [[_renderLabel(cbg, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbga-label"><span>CBGa: [[_renderLabel(cbga, ratingMode)]]</span></iron-label>
-          <iron-label class="rating-label cbn-label"><span>CBN: [[_renderLabel(cbn, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbda-label" hidden$="[[_checkCannabinoid('cbda', cbda)]]"><span>CBDa: [[_renderLabel(cbda, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbc-label" hidden$="[[_checkCannabinoid('cbc', cbc)]]"><span>CBC: [[_renderLabel(cbc, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbv-label" hidden$="[[_checkCannabinoid('cbv', cbv)]]"><span>CBV: [[_renderLabel(cbv, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbva-label" hidden$="[[_checkCannabinoid('cbva', cbva)]]"><span>CBVA: [[_renderLabel(cbva, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbg-label" hidden$="[[_checkCannabinoid('cbg', cbg)]]"><span>CBG: [[_renderLabel(cbg, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbga-label" hidden$="[[_checkCannabinoid('cbga', cbga)]]"><span>CBGa: [[_renderLabel(cbga, ratingMode)]]</span></iron-label>
+          <iron-label class="rating-label cbn-label" hidden$="[[_checkCannabinoid('cbn', cbn)]]"><span>CBN: [[_renderLabel(cbn, ratingMode)]]</span></iron-label>
 
           <iron-label class="terpene-label myrcene-label" hidden$="[[!terpenes.myrcene.presence]]"><span>MYR</span></iron-label>
           <iron-label class="terpene-label caryopyllene-oxide-label" hidden$="[[!terpenes.caryopylleneOxide.presence]]"><span>CRY-O</span></iron-label>
@@ -1143,6 +1142,13 @@
         if (value == null || value == undefined)
           return "?";
         return value + ratingMode;
+      },
+
+      /**
+       * Check if a cannabinoid label should be rendered or not.
+       */
+      _checkCannabinoid: function(name, value) {
+        return !(value !== undefined && typeof value === "number" && value > 0.0);
       }
     });
   </script>
