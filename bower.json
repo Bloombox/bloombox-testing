@@ -24,8 +24,8 @@
     "iron-label": "PolymerElements/iron-label#^1.0.2",
     "paper-slider": "PolymerElements/paper-slider#^1.0.11",
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.2.0",
-    "bloombox-product": "git@github.com:Bloombox/bloombox-product.git",
-    "bloombox-styles": "git@github.com:Bloombox/bloombox-styles.git",
+    "bloombox-product": "git@github.com:Bloombox/bloombox-product.git#master",
+    "bloombox-styles": "git@github.com:Bloombox/bloombox-styles.git#master",
     "paper-radio-button": "PolymerElements/paper-radio-button#^1.2.1",
     "paper-radio-group": "momentum/paper-radio-group#master"
   },
