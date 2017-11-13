@@ -1006,9 +1006,18 @@
         },
 
         /**
-         * CBC value detected/indicated by the tests.
+         * CBV value detected/indicated by the tests.
          */
         cbv: {
+          type: Number,
+          notify: true,
+          value: 0
+        },
+
+        /**
+         * CBVa value detected/indicated by the tests.
+         */
+        cbva: {
           type: Number,
           notify: true,
           value: 0
