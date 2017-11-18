@@ -454,34 +454,36 @@
               <span class="unit-label">[[ratingMode]]</span>
             </iron-label>
           </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>THCa:</span>
-              <paper-slider
-                id="thcaValue"
-                editable
-                value="{{thca}}"
-                class="thca-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>THCV:</span>
-              <paper-slider
-                id="thcvValue"
-                editable
-                value="{{thcv}}"
-                class="thcv-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
+          <template is="dom-if" if="[[_rich]]" strip-whitespace>
+            <div class="test-result-rating">
+              <iron-label>
+                <span>THCa:</span>
+                <paper-slider
+                  id="thcaValue"
+                  editable
+                  value="{{thca}}"
+                  class="thca-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+            <div class="test-result-rating">
+              <iron-label>
+                <span>THCV:</span>
+                <paper-slider
+                  id="thcvValue"
+                  editable
+                  value="{{thcv}}"
+                  class="thcv-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+          </template>
           <div class="test-result-rating">
             <iron-label>
               <span>CBD:</span>
@@ -496,104 +498,137 @@
               <span class="unit-label">[[ratingMode]]</span>
             </iron-label>
           </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBDa:</span>
-              <paper-slider
-                id="cbdaValue"
-                editable
-                value="{{cbda}}"
-                class="cbda-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBC:</span>
-              <paper-slider
-                id="cbcValue"
-                editable
-                value="{{cbc}}"
-                class="cbc-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBDV:</span>
-              <paper-slider
-                id="cbdvValue"
-                editable
-                value="{{cbdv}}"
-                class="cbdv-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating --> 
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBDVa:</span>
-              <paper-slider
-                id="cbdvaValue"
-                editable
-                value="{{cbdva}}"
-                class="cbdva-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBG:</span>
-              <paper-slider
-                id="cbgValue"
-                editable
-                value="{{cbg}}"
-                class="cbg-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBGa:</span>
-              <paper-slider
-                id="cbgaValue"
-                editable
-                value="{{cbga}}"
-                class="cbga-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
-          <div class="test-result-rating">
-            <iron-label>
-              <span>CBN:</span>
-              <paper-slider
-                id="cbnValue"
-                editable
-                value="{{cbn}}"
-                class="cbn-value test-result-rating-value form-item"
-                secondary-progress="[[_ratingModeParams.limit_hint]]"
-                step="[[_ratingModeParams.step]]"
-                max="[[_ratingModeParams.max]]"></paper-slider>
-              <span class="unit-label">[[ratingMode]]</span>
-            </iron-label>
-          </div><!-- end div.test-result-rating -->
+          <template is="dom-if" if="[[_rich]]" strip-whitespace>
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBDa:</span>
+                <paper-slider
+                  id="cbdaValue"
+                  editable
+                  value="{{cbda}}"
+                  class="cbda-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBC:</span>
+                <paper-slider
+                  id="cbcValue"
+                  editable
+                  value="{{cbc}}"
+                  class="cbc-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBV:</span>
+                <paper-slider
+                  id="cbvValue"
+                  editable
+                  value="{{cbv}}"
+                  class="cbv-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating --> 
+
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBVa:</span>
+                <paper-slider
+                  id="cbvaValue"
+                  editable
+                  value="{{cbva}}"
+                  class="cbva-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating --> 
+
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBDV:</span>
+                <paper-slider
+                  id="cbdvValue"
+                  editable
+                  value="{{cbdv}}"
+                  class="cbdv-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating --> 
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBDVa:</span>
+                <paper-slider
+                  id="cbdvaValue"
+                  editable
+                  value="{{cbdva}}"
+                  class="cbdva-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBG:</span>
+                <paper-slider
+                  id="cbgValue"
+                  editable
+                  value="{{cbg}}"
+                  class="cbg-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBGa:</span>
+                <paper-slider
+                  id="cbgaValue"
+                  editable
+                  value="{{cbga}}"
+                  class="cbga-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+            <div class="test-result-rating">
+              <iron-label>
+                <span>CBN:</span>
+                <paper-slider
+                  id="cbnValue"
+                  editable
+                  value="{{cbn}}"
+                  class="cbn-value test-result-rating-value form-item"
+                  secondary-progress="[[_ratingModeParams.limit_hint]]"
+                  step="[[_ratingModeParams.step]]"
+                  max="[[_ratingModeParams.max]]"></paper-slider>
+                <span class="unit-label">[[ratingMode]]</span>
+              </iron-label>
+            </div><!-- end div.test-result-rating -->
+          </template>
         </div><!-- end div.test-result-ratings -->
 
         <template is="dom-if" if="[[_rich]]" strip-whitespace>
