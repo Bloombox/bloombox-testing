@@ -1,6 +1,6 @@
 {
   "name": "bloombox-testing",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Provides UI for viewing and editing product QA testing results",
   "main": "index.html",
   "repository": {
